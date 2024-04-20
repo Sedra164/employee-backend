@@ -14,7 +14,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable implements JWTSubject
 
 {
-    use HasApiTokens, HasFactory, Notifiable,HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -44,7 +44,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password'=>'hashed'
+        'password' => 'hashed'
     ];
     // Rest omitted for brevity
 
@@ -68,13 +68,16 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
-    public  function  form(){
+
+    public function form()
+    {
         return $this->hasOne(Form::class);
     }
-    public  function  company(){
-        return $this->hasOne(Company::class,'manager_id');
-    }
 
+    public function company()
+    {
+        return $this->hasOne(Company::class, 'manager_id');
+    }
 
 
 }

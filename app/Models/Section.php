@@ -12,7 +12,7 @@ class Section extends Model
 
     protected $fillable=['name'];
 
-    public function company(): BelongsToMany
+    public function companies(): BelongsToMany
     {
         return $this->belongsToMany(Company::class,'section_company');
     }

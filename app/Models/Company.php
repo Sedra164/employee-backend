@@ -16,8 +16,8 @@ class Company extends Model
     {
         return $this->belongsTo(User::class,'manager_id');
     }
-    public function section(): BelongsToMany
+    public function sections(): BelongsToMany
     {
-        return $this->belongsToMany(section::class,'section_company');
+        return $this->hasMany(section::class,'section_company');
     }
 }

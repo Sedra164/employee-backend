@@ -32,11 +32,14 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        $company=Company::create($request->all());
+
 
         $company=new Company();
         $company->name=$request->name;
-        $company->description=$request->description;
+        $company->type=$request->type;
+        $company->email=$request->email;
+        $company->website=$request->website;
+        $company->address=$request->address;
         $company->manager()->associate($request->managerId);
         $company->save();
         return response()->json(['success'=>true,'message'=>'company created','data'=>$company],201);
