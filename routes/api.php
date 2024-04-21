@@ -47,6 +47,9 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/resend', [AuthController::class, 'resendOtp']);
     Route::post('/forgetPassword', [AuthController::class, 'forgetPassword']);
     Route::post('/resetPassword', [AuthController::class, 'resetPassword']);
-
+    Route::get('/sections', [SectionController::class,'index']);
+    Route::get('/companies', [CompanyController::class,'index']);
+    Route::get('/jobs', [JobController::class,'index']);
+    Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
 });
 

@@ -34,6 +34,7 @@ class JobController extends Controller
         $job->jobDescription=$request->jobDescription;
         $job->count=$request->count;
         $job->salary=$request->salary;
+        $job->sectionCompany()->associate($request->sectionCompanyId);
         $job->save();
         return response()->json(['success'=>true,'data'=>$job],201);
     }
