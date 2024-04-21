@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('website');
             $table->timestamp('email_verified_at')->nullable();
             $table->unsignedBigInteger('manager_id');
-            $table->foreign('manager_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('manager_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 
         });

@@ -29,7 +29,10 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        $section=Section::create($request->all());
+
+        $section=new Section();
+        $section->name=$request->name;
+        $section->save();
         return response()->json(['success'=>true,'message'=>'section created','data'=>$section],201);
 
     }
@@ -55,19 +58,17 @@ class SectionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $section=Section::find($id);
-        $section->update($request->all());
-        return response()->json(['success'=>true,'message'=>'section updated','data'=>$section],200);
+//
 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Section $section)
     {
-        $section=Section::findOrFail($id);
+
         $section->delete();
-        return response()->json(['success'=>true,'message'=>'section deleted','data'=>$section],200);
+        return response()->json(['success'=>true,'message'=>'section deleted','data'=>null],200);
     }
 }

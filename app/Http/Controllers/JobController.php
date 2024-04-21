@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\Company;
-use App\Models\User;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $company=Company::all();
-        return response()->json(['success'=>true,'data'=>$company],200);
-
+        $job=Job::all();
+        return response()->json(['success'=>true,'data'=>$job],200);
     }
 
     /**
@@ -32,18 +29,13 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $company=new Company();
-        $company->name=$request->name;
-        $company->type=$request->type;
-        $company->email=$request->email;
-        $company->website=$request->website;
-        $company->address=$request->address;
-        $company->manager()->associate($request->managerId);
-        $company->save();
-        return response()->json(['success'=>true,'message'=>'company created','data'=>$company],201);
-
+        $job=new Job();
+        $job->title=$request->title;
+        $job->jobDescription=$request->jobDescription;
+        $job->count=$request->count;
+        $job->salary=$request->salary;
+        $job->save();
+        return response()->json(['success'=>true,'data'=>$job],201);
     }
 
     /**
@@ -67,16 +59,15 @@ class CompanyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Company $company)
+    public function destroy(Job $job)
     {
-
-        $company->delete();
-        return response()->json(['success'=>true,'message'=>'company deleted','data'=> null],200);
+        $job->delete();
+        return response()->json(['success'=>true,'data'=>$job],200);
     }
 }

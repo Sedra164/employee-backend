@@ -16,9 +16,9 @@ return new class extends Migration
             $table->integer('num');
             $table->time('date');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
-            $table->unsignedBigInteger('job_id');
-            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');;
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+//            $table->unsignedBigInteger('job_id');
+//            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
 
         });
     }

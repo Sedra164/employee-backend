@@ -1,22 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
-use App\Models\Company;
-use App\Models\User;
+use App\Models\sectionCompany;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class sectionCompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $company=Company::all();
-        return response()->json(['success'=>true,'data'=>$company],200);
-
+        $sectionCompany=sectionCompany::all();
+        return response()->json(['success'=>true,'data'=>$sectionCompany],200);
     }
 
     /**
@@ -32,18 +28,11 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $company=new Company();
-        $company->name=$request->name;
-        $company->type=$request->type;
-        $company->email=$request->email;
-        $company->website=$request->website;
-        $company->address=$request->address;
-        $company->manager()->associate($request->managerId);
-        $company->save();
-        return response()->json(['success'=>true,'message'=>'company created','data'=>$company],201);
-
+        $sectionCompany=new sectionCompany();
+        $sectionCompany->Company()->associate($request->companyId);
+        $sectionCompany->section()->associate($request->sectionId);
+        $sectionCompany->save();
+        return response()->json(['success'=>true,'data'=>$sectionCompany],200);
     }
 
     /**
@@ -67,16 +56,14 @@ class CompanyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Company $company)
+    public function destroy(string $id)
     {
-
-        $company->delete();
-        return response()->json(['success'=>true,'message'=>'company deleted','data'=> null],200);
+        //
     }
 }

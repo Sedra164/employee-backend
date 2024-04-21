@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\sectionCompanyController;
 use App\Http\Controllers\SectionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +28,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/sections', [SectionController::class,'index']);
     Route::post('/sections/store', [SectionController::class,'store']);
-     Route::put('/sections/update/{id}', [SectionController::class,'update']);
     Route::delete('/sections/delete/{id}', [SectionController::class,'destroy']);
      Route::get('/companies', [CompanyController::class,'index']);
     Route::post('/companies/store', [CompanyController::class,'store']);
     Route::delete('/companies/{id}', [CompanyController::class,'destroy']);
+    Route::get('/jobs', [JobController::class,'index']);
+    Route::post('/jobs/store', [JobController::class,'store']);
+    Route::delete('/jobs/{id}', [JobController::class,'destroy']);
+    Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
+    Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
 });
 
 Route::group(['prefix' => 'user'], function () {
