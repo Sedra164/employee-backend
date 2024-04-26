@@ -71,7 +71,7 @@ class AuthController extends Controller
             $user->password = Hash::make($req->password);
             $user->email = $req->email;
             $user->phone = $req->phone;
-            $user->assignRole('user');
+//            $user->assignRole('user');
             $user->save();
             $token = Auth::attempt(['user_name' => $user->user_name, 'password' => $req->password]);
             if (!$token) {

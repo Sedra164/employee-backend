@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class sectionCompany extends Model
 {
     use HasFactory;
-    public function job(): HasMany
+    public function job(): BelongsTo
     {
-        return $this->hasMany(job::class,'section_company_id');
+        return $this->belongsTo(job::class);
     }
 }

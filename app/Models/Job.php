@@ -25,9 +25,11 @@ class Job extends Model
     {
         return $this->belongsToMany(Education::class,'education_job');
     }
-    public function sectionCompany(): BelongsTo
+    public function sectionCompany(): HasMany
     {
-        return $this->belongsTo(sectionCompany::class,'section_company_id');
+        return $this->hasMany(sectionCompany::class);
+
     }
+
 
 }
