@@ -62,6 +62,7 @@ class AuthController extends Controller
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
                 'phone' => 'required|min:10',
+                'idNumber'=>'required|min:12',
             ]);
 
             $user = new User();
@@ -71,6 +72,7 @@ class AuthController extends Controller
             $user->password = Hash::make($req->password);
             $user->email = $req->email;
             $user->phone = $req->phone;
+            $user->idNumber = $req->idNumber;
 //            $user->assignRole('user');
             $user->save();
             $token = Auth::attempt(['user_name' => $user->user_name, 'password' => $req->password]);

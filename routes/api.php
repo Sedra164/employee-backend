@@ -51,5 +51,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/companies', [CompanyController::class,'index']);
     Route::get('/jobs', [JobController::class,'index']);
     Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
+
 });
 
