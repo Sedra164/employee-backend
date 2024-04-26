@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class sectionCompany extends Model
 {
     use HasFactory;
-    public function job(): BelongsTo
-    {
-        return $this->belongsTo(job::class);
-    }
+
+   public function job(): BelongsTo
+   {
+       return $this->belongsTo(Job::class);
+   }
 }

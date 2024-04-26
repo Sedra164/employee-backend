@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\sectionCompany;
+use App\Models\Section;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class sectionCompanyController extends Controller
@@ -29,7 +31,7 @@ class sectionCompanyController extends Controller
     public function store(Request $request)
     {
         $sectionCompany=new sectionCompany();
-        $sectionCompany->Company()->associate($request->companyId);
+        $sectionCompany->company()->associate($request->companyId);
         $sectionCompany->section()->associate($request->sectionId);
         $sectionCompany->save();
         return response()->json(['success'=>true,'data'=>$sectionCompany],200);
