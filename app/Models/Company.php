@@ -20,4 +20,9 @@ class Company extends Model
     {
         return $this->hasMany(section::class,'section_company');
     }
+    public function sectionCompany():HasMany
+    {
+        return $this->hasMany(sectionCompany::class);
+    }
+
 }
