@@ -47,13 +47,14 @@ class AuthController extends Controller
             $req->validate(['userName' => 'required|alpha_dash|min:4|exists:users,user_name',
                 'password' => 'required|min:6'
             ]);
-
             $token = Auth::attempt(['user_name' => $req->userName, 'password' => $req->password]);
+
             if ($token) {
                 $user = Auth::user();
                 $user->token = $token;
                 if ($user->hasRole('super_admin')||$user->hasRole('admin')) {
-                    $user->save();
+//                    $user->save();
+
                     return response()->json(UserResource::make($user), 200);
                 } else {
                     return response()->json( ['message'=>'Please Check Your Password And Try Again'],401);
