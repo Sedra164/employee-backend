@@ -20,7 +20,8 @@ class UserSeeder extends Seeder
         $superAdmin->first_name='super';
         $superAdmin->last_name='Admin';
         $superAdmin->phone='+963963852741';
-        $superAdmin->idNumber='123456789';
+        $superAdmin->idNumber='12345678923443342';
+        $superAdmin->address='aleppo';
         $superAdmin->assignRole('super_admin');
         $superAdmin->save();
 
@@ -31,6 +32,8 @@ class UserSeeder extends Seeder
         $admin->first_name='admin';
         $admin->last_name='Admin';
         $admin->phone='+963948355342';
+        $admin->idNumber='0023363654424242';
+        $admin->address='hama';
         $admin->assignRole('admin');
         $admin->save();
 

@@ -26,7 +26,8 @@ class RegisterRequest extends FormRequest
             'userName' => 'required|min:4|alpha_dash|unique:users,user_name',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'birthDate' => 'required|date', // Adjust the date validation rule as needed
+            'phone' => 'required|min:10',
+            'address'=>'required',
             'referralId' => 'nullable|exists:users,user_name', // Nullable if referral ID is optional
         ];
     }
@@ -45,7 +46,8 @@ class RegisterRequest extends FormRequest
             'password.min' => 'The password must be at least :min characters.',
             'phone.required' => 'The phone field is required.',
             'phone.min'=>'The phone must be at least :min characters.',
-           'idNumber.required'=>'The idNumber field is required.',
+            'address.required'=>'The address field is required.',
+            'idNumber.required'=>'The idNumber field is required.',
             'idNumber.min'=>'The idNumber must be at least :min characters',
             'referralId.exists' => 'The referral ID does not exist.',
         ];

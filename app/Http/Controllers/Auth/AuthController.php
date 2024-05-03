@@ -54,18 +54,17 @@ class AuthController extends Controller
                 $user->token = $token;
                 if ($user->hasRole(['super_admin','admin'])) {
                     $user->save();
-                    return ApiResponse::success(UserResource::make($user),
-                        200);
+                    return response()->json(UserResource::make($user), 200);
                 } else {
-                    return ApiResponse::error(401, 'Please Check Your Password And Try Again');
+                    return response()->json( ['message'=>'Please Check Your Password And Try Again'],401);
                 }
             } else {
-                return ApiResponse::error(401, 'Please Check Your Password And Try Again');
+                return response()->json( ['message'=>'Please Check Your Password And Try Again'],401);
             }
 
 
         } catch (Throwable $throwable) {
-            return ApiResponse::error(401, 'Please Check Your UserName');
+            return response()->json( ['message'=>'Please Check Your UserName'],401);
         }
 
     }
@@ -92,7 +91,9 @@ class AuthController extends Controller
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
                 'phone' => 'required|min:10',
+                'address'=>'required',
                 'idNumber'=>'required|min:12',
+
             ]);
 
             $user = new User();
@@ -102,6 +103,7 @@ class AuthController extends Controller
             $user->password = Hash::make($req->password);
             $user->email = $req->email;
             $user->phone = $req->phone;
+            $user->address = $req->address;
             $user->idNumber = $req->idNumber;
            $user->assignRole('user');
             $user->save();
