@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Education extends Model
+class formSkill extends Model
 {
     use HasFactory;
-
-    public function form(): BelongsTo
-    {
+    public function form():BelongsTo{
         return $this->belongsTo(Form::class);
     }
-    public function job(): BelongsToMany
-    {
-        return $this->belongsToMany(Job::class,'education_job');
+    public function skill():BelongsTo{
+        return $this->belongsTo(Skill::class);
     }
 }

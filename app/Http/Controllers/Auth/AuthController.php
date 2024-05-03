@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Ichtrojan\Otp\Otp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -37,6 +38,34 @@ class AuthController extends Controller
             return response()->json(['message' => $e->getMessage()], 401);
         }
 
+
+    }
+    public function loginAdmin(Request $req)
+    {
+        try {
+            $req->validate(['userName' => 'required|alpha_dash|min:4|exists:users,user_name',
+                'password' => 'required|min:6'
+            ]);
+
+            $token = Auth::attempt(['user_name' => $req->userName, 'password' => $req->password]);
+            if ($token) {
+                $user = Auth::user();
+                $user->token = $token;
+                if ($user->hasRole(['super_admin','admin'])) {
+                    $user->save();
+                    return ApiResponse::success(UserResource::make($user),
+                        200);
+                } else {
+                    return ApiResponse::error(401, 'Please Check Your Password And Try Again');
+                }
+            } else {
+                return ApiResponse::error(401, 'Please Check Your Password And Try Again');
+            }
+
+
+        } catch (Throwable $throwable) {
+            return ApiResponse::error(401, 'Please Check Your UserName');
+        }
 
     }
 

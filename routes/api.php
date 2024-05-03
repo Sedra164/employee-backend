@@ -28,13 +28,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/sections', [SectionController::class,'index']);
     Route::post('/sections/store', [SectionController::class,'store']);
-    Route::delete('/sections/delete/{id}', [SectionController::class,'destroy']);
+    Route::delete('/sections/{section}', [SectionController::class,'destroy']);
      Route::get('/companies', [CompanyController::class,'index']);
     Route::post('/companies/store', [CompanyController::class,'store']);
-    Route::delete('/companies/{id}', [CompanyController::class,'destroy']);
+    Route::delete('/companies/{company}', [CompanyController::class,'destroy']);
     Route::get('/jobs', [JobController::class,'index']);
     Route::post('/jobs/store', [JobController::class,'store']);
-    Route::delete('/jobs/{id}', [JobController::class,'destroy']);
+    Route::delete('/jobs/{job}', [JobController::class,'destroy']);
     Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
     Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
 });

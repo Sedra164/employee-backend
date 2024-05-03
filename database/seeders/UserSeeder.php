@@ -15,12 +15,23 @@ class UserSeeder extends Seeder
     {
         $superAdmin = new User();
         $superAdmin->user_name='superAdmin';
-        $superAdmin->email='admin@hitbitz.com';
+        $superAdmin->email='admin@employee.com';
         $superAdmin->password='12345678';
         $superAdmin->first_name='super';
         $superAdmin->last_name='Admin';
         $superAdmin->phone='+963963852741';
         $superAdmin->assignRole('super_admin');
         $superAdmin->save();
+
+        $admin=new User();
+        $admin->user_name='admin';
+        $admin->email='admin@gmail.com';
+        $admin->password='223344556677';
+        $admin->first_name='admin';
+        $admin->last_name='Admin';
+        $admin->phone='+963948355342';
+        $admin->assignRole('admin');
+        $admin->save();
+
     }
 }

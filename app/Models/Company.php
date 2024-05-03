@@ -24,5 +24,8 @@ class Company extends Model
     {
         return $this->hasMany(sectionCompany::class);
     }
+    public function educationJob():HasMany{
+        return $this->hasMany(educationJob::class);
+    }
 
 }

@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Job extends Model
@@ -17,18 +16,24 @@ class Job extends Model
         return $this->hasMany(Form::class);
 
     }
-    public function skill(): BelongsToMany
+    public function skill(): HasMany
     {
-        return $this->belongsToMany(Skill::class,'job_skill');
+        return $this->hasMany(Skill::class,'job_skill');
     }
-    public function education(): BelongsToMany
+    public function education(): HasMany
     {
-        return $this->belongsToMany(Education::class,'education_job');
+        return $this->hasMany(Education::class,'education_job');
     }
     public function sectionCompany(): BelongsTo
     {
         return $this->belongsTo(sectionCompany::class);
 
+    }
+    public function skillJob():HasMany{
+        return $this->hasMany(skillJob::class);
+    }
+    public function educationJob():HasMany{
+        return $this->hasMany(educationJob::class);
     }
 
 
