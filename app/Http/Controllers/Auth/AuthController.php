@@ -52,7 +52,7 @@ class AuthController extends Controller
             if ($token) {
                 $user = Auth::user();
                 $user->token = $token;
-                if ($user->hasRole(['super_admin','admin'])) {
+                if ($user->hasRole('super_admin')||$user->hasRole('admin')) {
                     $user->save();
                     return response()->json(UserResource::make($user), 200);
                 } else {
@@ -76,8 +76,6 @@ class AuthController extends Controller
             Auth::logout();
             return response()->json();
         } catch (Throwable $e) {
-
-
             return response()->json(['message' => $e->getMessage()], 402);
         }
     }
