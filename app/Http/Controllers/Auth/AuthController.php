@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Ichtrojan\Otp\Otp;
 use Illuminate\Http\Request;
@@ -102,7 +103,7 @@ class AuthController extends Controller
             $user->email = $req->email;
             $user->phone = $req->phone;
             $user->idNumber = $req->idNumber;
-//            $user->assignRole('user');
+           $user->assignRole('user');
             $user->save();
             $token = Auth::attempt(['user_name' => $user->user_name, 'password' => $req->password]);
             if (!$token) {
