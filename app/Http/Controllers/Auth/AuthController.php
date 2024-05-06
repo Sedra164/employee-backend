@@ -53,7 +53,6 @@ class AuthController extends Controller
                 $user = Auth::user();
                 $user->token = $token;
                 if ($user->hasRole('super_admin')||$user->hasRole('admin')) {
-//                    $user->save();
 
                     return response()->json(UserResource::make($user), 200);
                 } else {
@@ -104,7 +103,7 @@ class AuthController extends Controller
             $user->phone = $req->phone;
             $user->address = $req->address;
             $user->idNumber = $req->idNumber;
-           $user->assignRole('user');
+//           $user->assignRole('user');
             $user->save();
             $token = Auth::attempt(['user_name' => $user->user_name, 'password' => $req->password]);
             if (!$token) {

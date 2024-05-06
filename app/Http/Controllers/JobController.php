@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+
 use Illuminate\Http\Request;
+use spatie\QueryBuilder\QueryBuilder;
 
 class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index( Request $request)
     {
-        $job=Job::all();
-        return response()->json(['success'=>true,'data'=>$job],200);
+        $job=Job::find($request->sectionId);
+        if(!is_null($job)&&!$job)
+        {
+            return response()->json(['message'=>'This section isn\'t Exist'],200);
+        }else{
+            $job=QueryBuilder::for(Job::query())->allowedFilters(['name','section_id'])->defaultSort('-updated_at')->Paginate(request()->perPage);
+        }
+        return response()->json(['success'=>true,'data'=>$job,'message'=>'this is all jobs'],200);
     }
 
     /**

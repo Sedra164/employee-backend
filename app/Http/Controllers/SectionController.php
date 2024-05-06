@@ -29,10 +29,12 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-
         $section=new Section();
         $section->name=$request->name;
         $section->save();
+        $imageC=new ImageController();
+        $image=$imageC->uploadImage($request->image);
+        $section->addMedia('path to image'.'/'.$image)->toMediaCollection('sections');
         return response()->json(['success'=>true,'message'=>'section created','data'=>$section],201);
 
     }
