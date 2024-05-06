@@ -12,8 +12,8 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $section=Section::all();
-        return response()->json(['success'=>true,'data'=>$section],200);
+        $section = Section::query()->with(['media'])->get();
+        return response()->json(['success' => true, 'data' => $section], 200);
     }
 
     /**
@@ -29,13 +29,14 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        $section=new Section();
-        $section->name=$request->name;
+        $section = new Section();
+        $section->name = $request->name;
         $section->save();
-        $imageC=new ImageController();
-        $image=$imageC->uploadImage($request->image);
-        $section->addMedia('path to image'.'/'.$image)->toMediaCollection('sections');
-        return response()->json(['success'=>true,'message'=>'section created','data'=>$section],201);
+        $imageC = new ImageController();
+        $image = $imageC->uploadImage($request->image);
+        $section->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('sections');
+
+        return response()->json(['success' => true, 'message' => 'section created', 'data' => $section], 201);
 
     }
 
@@ -71,6 +72,6 @@ class SectionController extends Controller
     {
 
         $section->delete();
-        return response()->json(['success'=>true,'message'=>'section deleted','data'=>null],200);
+        return response()->json(['success' => true, 'message' => 'section deleted', 'data' => null], 200);
     }
 }
