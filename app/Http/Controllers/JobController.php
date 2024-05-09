@@ -20,11 +20,7 @@ class JobController extends Controller
             return response()->json(['message'=>'the section isn\'t exist'],404);
 
         }
-        else {
-           $jobs=Job::query()->with(['media'])->get();
-         }
 
-       return response()->json(['success' => true, 'data' => $jobs,'message'=>'This all Jobs'], 200);
 
     }
 

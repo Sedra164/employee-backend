@@ -14,7 +14,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company=Company::all();
+        $company = Company::query()->with(['media'])->get();
         return response()->json(['success'=>true,'data'=>$company],200);
 
     }
@@ -42,6 +42,9 @@ class CompanyController extends Controller
         $company->address=$request->address;
         $company->manager()->associate($request->managerId);
         $company->save();
+        $imageC = new ImageController();
+        $image = $imageC->uploadImage($request->image);
+        $company->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('companies');
         return response()->json(['success'=>true,'message'=>'company created','data'=>$company],201);
 
     }
