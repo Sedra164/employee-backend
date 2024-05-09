@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
-
+use App\Models\Section;
 use Illuminate\Http\Request;
-use spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 class JobController extends Controller
 {
@@ -14,15 +15,19 @@ class JobController extends Controller
      */
     public function index( Request $request)
     {
-        $job=Job::find($request->sectionId);
-        if(!is_null($job)&&!$job)
-        {
-            return response()->json(['message'=>'This section isn\'t Exist'],200);
-        }else{
-            $job=QueryBuilder::for(Job::query())->allowedFilters(['name','section_id'])->defaultSort('-updated_at')->Paginate(request()->perPage);
+        $section = Section::find($request->sectionId);
+         if (!is_null($section) && !$section) {
+            return response()->json(['message'=>'the section isn\'t exist'],404);
+
         }
-        return response()->json(['success'=>true,'data'=>$job,'message'=>'this is all jobs'],200);
+        else {
+           $jobs=Job::query()->with(['media'])->get();
+         }
+
+       return response()->json(['success' => true, 'data' => $jobs,'message'=>'This all Jobs'], 200);
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,6 +49,9 @@ class JobController extends Controller
         $job->salary=$request->salary;
         $job->sectionCompany()->associate($request->sectionCompanyId);
         $job->save();
+        $imageC = new ImageController();
+        $image = $imageC->uploadImage($request->image);
+        $job->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('jobs');
         return response()->json(['success'=>true,'data'=>$job],201);
     }
 
