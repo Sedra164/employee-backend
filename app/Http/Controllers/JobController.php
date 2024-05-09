@@ -19,7 +19,7 @@ class JobController extends Controller
     {
         $sectionCompany = sectionCompany::find($request->sectionId);
         if (!is_null($sectionCompany ) && !$sectionCompany ) {
-            return ApiResponse::error(421, 'This Section isn\'t Exist');
+            return ApiResponse::error(404, 'This Section isn\'t Exist');
         }
         else  if (!is_null( $sectionCompany)) {
             $ids = [];
@@ -27,7 +27,7 @@ class JobController extends Controller
             foreach ($sectionCompanies as $e) {
                 $ids[] = $e->id;
             }
-        $jobs=QueryBuilder::for(Job::query()->with(['media'])->whereIn('sectionCompany_id', $ids,))->allowedFilters(['sectionCompany_id'])->defaultSort('-updated_at')->get();
+        $jobs=QueryBuilder::for(Job::query()->with(['media'])->whereIn('sectionCompany_id', $ids,))->allowedFilters(['sectionCompany_id'])->defaultSort('-updated_at');
         }
         return ApiResponse::success(JobResource::collection($jobs->items()), 200, 'This Is All jobs');
 
