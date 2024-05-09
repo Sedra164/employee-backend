@@ -2,25 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ApiResponse;
+use App\Http\Resources\JobResource;
 use App\Models\Job;
-use App\Models\Section;
+use App\Models\sectionCompany;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
-use Spatie\QueryBuilder\AllowedFilter;
+
 
 class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index( Request $request)
+    public function index(Request $request)
     {
-        $section = Section::find($request->sectionId);
-         if (!is_null($section) && !$section) {
-            return response()->json(['message'=>'the section isn\'t exist'],404);
-
+        $sectionCompany = sectionCompany::find($request->sectionId);
+        if (!is_null($sectionCompany ) && !$sectionCompany ) {
+            return ApiResponse::error(421, 'This Section isn\'t Exist');
         }
-
+        else  if (!is_null( $sectionCompany)) {
+            $ids = [];
+            $sectionCompanies = $sectionCompany->section;
+            foreach ($sectionCompanies as $e) {
+                $ids[] = $e->id;
+            }
+        $jobs=QueryBuilder::for(Job::query()->with(['media'])->whereIn('sectionCompany_id', $ids,))->allowedFilters(['sectionCompany_id'])->defaultSort('-updated_at')->get();
+        }
+        return ApiResponse::success(JobResource::collection($jobs->items()), 200, 'This Is All jobs');
 
     }
 
@@ -56,7 +65,11 @@ class JobController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $job = Job::query()->where('id', $id)->with(['media','SectionCompany'])->get();
+        if ($job->isEmpty())
+            return ApiResponse::error(404, 'Not Found');
+        return ApiResponse::success(JobResource::make($job->first()), 200);
+
     }
 
     /**

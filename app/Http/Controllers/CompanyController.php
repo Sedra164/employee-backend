@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Helpers\ApiResponse;
+use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -54,7 +56,10 @@ class CompanyController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $company = Company::query()->where('id', $id)->with(['media'])->get();
+        if ($company->isEmpty())
+            return ApiResponse::error(404, 'Not Found');
+        return ApiResponse::success(CompanyResource::make($company->first()), 200);
     }
 
     /**

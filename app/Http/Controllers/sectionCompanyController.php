@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Helpers\ApiResponse;
+use App\Http\Resources\SectionCompanyResource;
+use App\Http\Resources\SectionResource;
 use App\Models\sectionCompany;
 use App\Models\Section;
 use App\Models\Company;
@@ -42,7 +45,10 @@ class sectionCompanyController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $sectionCompany = sectionCompany::query()->where('id', $id)->with(['company','section'])->get();
+        if ($sectionCompany->isEmpty())
+            return ApiResponse::error(404, 'Not Found');
+        return ApiResponse::success(SectionCompanyResource::make($sectionCompany->first()), 200);
     }
 
     /**

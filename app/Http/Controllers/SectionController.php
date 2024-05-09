@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ApiResponse;
+use App\Http\Resources\SectionCompanyResource;
+use App\Http\Resources\SectionResource;
 use App\Models\Section;
 use Illuminate\Http\Request;
 
@@ -45,7 +48,10 @@ class SectionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $section = Section::query()->where('id', $id)->with(['media'])->get();
+        if ($section->isEmpty())
+            return ApiResponse::error(404, 'Not Found');
+        return ApiResponse::success(SectionResource::make($section->first()), 200);
     }
 
     /**

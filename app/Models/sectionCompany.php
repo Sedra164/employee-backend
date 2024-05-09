@@ -11,7 +11,9 @@ class sectionCompany extends Model
 {
     use HasFactory;
 
-   public function job(): HasMany
+
+
+    public function job(): HasMany
    {
        return $this->hasMany(Job::class);
    }
