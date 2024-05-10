@@ -7,7 +7,7 @@ use App\Http\Resources\JobResource;
 use App\Models\Job;
 use App\Models\sectionCompany;
 use Illuminate\Http\Request;
-use Spatie\QueryBuilder\QueryBuilder;
+
 
 
 class JobController extends Controller
@@ -17,19 +17,23 @@ class JobController extends Controller
      */
     public function index(Request $request)
     {
-        $sectionCompany = sectionCompany::find($request->sectionId);
-        if (!is_null($sectionCompany ) && !$sectionCompany ) {
-            return ApiResponse::error(404, 'This Section isn\'t Exist');
+       $sectionId=$request->get('section_id');
+        if(!$sectionId){
+            $job=Job::query()->with(['media'])->get();
+            return ApiResponse::success($job,200,'This All the jobs');
+        }else{
+          $sectionCompany = sectionCompany::query()->where('section_id','=',$sectionId)->get();
+             if(is_null($sectionCompany)) {
+               return ApiResponse::error(404, 'there are no jobs associated with this section');
+             }else{
+                $job=Job::query()->with(['media'])->where('section_company_id',$sectionCompany->pluck('id'))->get();
+                 return ApiResponse::success($job,200,'There is all works that belong to this section');
+
+           }
+
+
         }
-        else  if (!is_null( $sectionCompany)) {
-            $ids = [];
-            $sectionCompanies = $sectionCompany->section;
-            foreach ($sectionCompanies as $e) {
-                $ids[] = $e->id;
-            }
-        $jobs=QueryBuilder::for(Job::query()->with(['media'])->whereIn('sectionCompany_id', $ids,))->allowedFilters(['sectionCompany_id'])->defaultSort('-updated_at');
-        }
-        return ApiResponse::success(JobResource::collection($jobs->items()), 200, 'This Is All jobs');
+
 
     }
 
