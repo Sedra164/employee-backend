@@ -16,6 +16,8 @@ return new class extends Migration
             $table->text('title');
             $table->text('jobDescription');
             $table->integer('count');
+            $table->integer('Age');
+            $table->text('gender');
             $table->float('salary');
            $table->unsignedBigInteger('section_company_id');
            $table->foreign('section_company_id')->references('id')->on('section_companies')->onDelete('cascade');

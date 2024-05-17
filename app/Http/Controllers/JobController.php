@@ -55,6 +55,8 @@ class JobController extends Controller
         $job->title=$request->title;
         $job->jobDescription=$request->jobDescription;
         $job->count=$request->count;
+        $job->Age=$request->Age;
+        $job->gender=$request->gender;
         $job->salary=$request->salary;
         $job->sectionCompany()->associate($request->sectionCompanyId);
         $job->save();
