@@ -6,8 +6,8 @@ namespace App\Http\Controllers;
 use App\Helpers\ApiResponse;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
-use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class CompanyController extends Controller
 {
@@ -17,7 +17,7 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Company::query()->with(['media'])->get();
-        return response()->json(['success'=>true,'data'=>$company],200);
+        return ApiResponse::success(200,CompanyResource::make($company));
 
     }
 
@@ -47,7 +47,9 @@ class CompanyController extends Controller
         $imageC = new ImageController();
         $image = $imageC->uploadImage($request->image);
         $company->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('companies');
-        return response()->json(['success'=>true,'message'=>'company created','data'=>$company],201);
+        return ApiResponse::success(CompanyResource::make($company),200,'Company created');
+
+
 
     }
 
@@ -76,6 +78,18 @@ class CompanyController extends Controller
     public function update(Request $request, string $id)
     {
 
+        $company=Company::FindorFail($id);
+        $company->update([
+            $company->email=$request->email,
+            $company->website=$request->website,
+            $company->address=$request->address
+
+        ]);
+        return ApiResponse::success(CompanyResource::make($company),200,'Company updated');
+
+
+
+
     }
 
     /**
@@ -85,6 +99,7 @@ class CompanyController extends Controller
     {
 
         $company->delete();
-        return response()->json(['success'=>true,'message'=>'company deleted','data'=> null],200);
+        return ApiResponse::success(null,200,'CompanyDeleted');
+
     }
 }

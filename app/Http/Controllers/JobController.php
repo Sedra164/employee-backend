@@ -20,14 +20,14 @@ class JobController extends Controller
        $sectionId=$request->get('section_id');
         if(!$sectionId){
             $job=Job::query()->with(['media'])->get();
-            return ApiResponse::success($job,200,'This All the jobs');
+            return ApiResponse::success(JobResource::collection($job),200,'This All the jobs');
         }else{
           $sectionCompany = sectionCompany::query()->where('section_id','=',$sectionId)->get();
              if(is_null($sectionCompany)) {
                return ApiResponse::error(404, 'there are no jobs associated with this section');
              }else{
                 $job=Job::query()->with(['media'])->where('section_company_id',$sectionCompany->pluck('id'))->get();
-                 return ApiResponse::success($job,200,'There is all works that belong to this section');
+                 return ApiResponse::success(JobResource::collection($job),200,'There is all works that belong to this section');
 
            }
 

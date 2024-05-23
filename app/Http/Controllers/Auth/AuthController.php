@@ -17,6 +17,11 @@ class AuthController extends Controller
 
 {
     //
+    public function validateToken(Request $request){
+
+        $token=$request->bearerToken();
+    }
+
     public function login(Request $req)
     {
         try {
@@ -28,11 +33,12 @@ class AuthController extends Controller
             $token = Auth::attempt(['user_name' => $req->userName, 'password' => $req->password]);
             if ($token) {
                 $user = Auth::user();
-                $user->access_token = $token;
-                return response()->json($user,200);
+                $user->token=$token;
+                $user->save();
+                return ApiResponse::success(UserResource::make($user),200);
             } else {
 
-                return response()->json(['message' => 'Please Check Your Password And Try Again'], 401);
+                return ApiResponse::error(404,'Please Check Your Password And Try Again ');
             }
         } catch (Throwable$e) {
 
@@ -89,7 +95,6 @@ class AuthController extends Controller
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
                 'phone' => 'required|min:10',
-                'address'=>'required',
                 'idNumber'=>'required|min:12',
 
             ]);
@@ -101,7 +106,6 @@ class AuthController extends Controller
             $user->password = Hash::make($req->password);
             $user->email = $req->email;
             $user->phone = $req->phone;
-            $user->address = $req->address;
             $user->idNumber = $req->idNumber;
             $user->save();
             $token = Auth::attempt(['user_name' => $user->user_name, 'password' => $req->password]);
@@ -113,7 +117,7 @@ class AuthController extends Controller
                 $user->assignRole('user');
                 $user->save();
                 $user->access_token = $token;
-                return response()->json(['message' => 'User Authenticated', 'data' => $user], 200);
+                return ApiResponse::success(UserResource::make($user), 200, 'Otp Send Successfully');
             }
 
         } catch (Throwable $exception) {

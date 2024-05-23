@@ -19,6 +19,8 @@ class JobResource extends JsonResource
            'title'=>$this->title,
            'jobDescription'=>$this->jobDescription,
            'count'=>$this->count,
+           'Age'=>$this->Age,
+           'gender'=>$this->gender,
            'salary'=>$this->salary,
            'media' => MediaResource::make($this, 'jobs'),
        ];

@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/sections', [SectionController::class,'index']);
     Route::post('/sections/store', [SectionController::class,'store']);
+    Route::post('/sections/{id}', [SectionController::class,'update']);
     Route::get('/sections/{id}', [SectionController::class,'show']);
     Route::delete('/sections/{section}', [SectionController::class,'destroy']);
      Route::get('/companies', [CompanyController::class,'index']);

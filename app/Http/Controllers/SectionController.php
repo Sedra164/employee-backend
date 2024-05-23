@@ -67,8 +67,9 @@ class SectionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-//
-
+        $section=Section::FindorFail($id);
+        $section->update([$section->name = $request->name]);
+        return ApiResponse::success(SectionResource::make($section),200,'Section Updated');
     }
 
     /**
@@ -78,6 +79,6 @@ class SectionController extends Controller
     {
 
         $section->delete();
-        return response()->json(['success' => true, 'message' => 'section deleted', 'data' => null], 200);
+       return ApiResponse::success(null,200,'SectionDeleted');
     }
 }
