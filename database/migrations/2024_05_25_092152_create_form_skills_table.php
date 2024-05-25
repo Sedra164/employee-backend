@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('form_skill', function (Blueprint $table) {
+        Schema::create('form_skills', function (Blueprint $table) {
             $table->id();
+            $table->string('year');
             $table->unsignedBigInteger('form_id');
             $table->unsignedBigInteger('skill_id');
             $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('form_skill');
+        Schema::dropIfExists('form_skills');
     }
 };

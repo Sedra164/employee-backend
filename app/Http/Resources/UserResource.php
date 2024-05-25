@@ -24,9 +24,7 @@ class UserResource extends JsonResource
             'idNumber'=>$this->idNumber,
 
         ];
-        if (isset($this->referrer_id)) {
-            $data['referrer'] = $this->referrer_id;
-        }
+
         if (isset($this->token)) {
             $data['access_token'] = $this->token;
         }

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Skill extends Model
 {
     use HasFactory;
+    protected $fillable=['otherSkills','language','year'];
     public function form(): BelongsToMany
     {
         return $this->belongsToMany(Form::class,'form_skill');

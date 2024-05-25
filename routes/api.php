@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\sectionCompanyController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\skillJobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +46,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
     Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
     Route::get('/sectionCompanies/{id}', [sectionCompanyController::class,'show']);
+    Route::post('/skills/store', [SkillController::class,'store']);
+    Route::post('/skillJobs/store', [skillJobController::class,'store']);
+
 });
 
 Route::group(['prefix' => 'user'], function () {
@@ -56,7 +62,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/sections', [SectionController::class,'index']);
     Route::get('/companies', [CompanyController::class,'index']);
     Route::get('/jobs', [JobController::class,'index']);
-    Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
+    Route::post('/forms', [FormController::class,'store']);
 
 });
 

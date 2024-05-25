@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('educations', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('language');
+            $table->string('otherSkills');
             $table->string('year');
-            $table->string('institute');
-            $table->string('university');
-            $table->unsignedBigInteger('form_id');
-            $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');;
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('educations');
+        Schema::dropIfExists('skills');
     }
 };

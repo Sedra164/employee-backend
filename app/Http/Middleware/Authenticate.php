@@ -16,8 +16,7 @@ class Authenticate extends Middleware
     {
         if (Auth::guest()){
             return ApiResponse::error(404,'UnAuthorized');
-        }elseif ($request->bearerToken()!=Auth::user()->token){
-            return ApiResponse::error(404,'UnAuthorized');
+
         }else
             return $next($request);
     }

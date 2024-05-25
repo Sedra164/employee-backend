@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class skillJob extends Model
 {
     use HasFactory;
+    protected $fillable=['year'];
     public function job():BelongsTo{
         return $this->belongsTo(Job::class);
     }

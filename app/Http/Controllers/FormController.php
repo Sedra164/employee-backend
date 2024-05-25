@@ -1,7 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Helpers\ApiResponse;
+use App\Models\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class FormController extends Controller
 {
@@ -10,7 +15,7 @@ class FormController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -24,14 +29,46 @@ class FormController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
+        if(!Auth::user()){
+            return ApiResponse::error(401,'You Need Login First');
+        }
+        else{
+            $request->validate([
+                'first_name' => 'required|min:3',
+                'last_name'=>'required|min:3',
+                'father_name'=>'required|min:3',
+                'mother_name'=>'required|min:3',
+                'age'=>'required',
+                'gender'=>'required',
+                'martial_social'=>'required',
+                'address'=>'required',
+                'phone' => 'required|min:10',
+                'birth_date'=>'required|date',
+
+            ]);
+            $form=new Form();
+            $form->first_name = $request->first_name;
+            $form->last_name = $request->last_name;
+            $form->father_name = $request->father_name;
+            $form->mother_name = $request->mother_name;
+            $form->age = $request->age;
+            $form->gender = $request->gender;
+            $form->martial_social = $request->martial_social;
+            $form->address = $request->address;
+            $form->phone = $request->phone;
+            $form->birth_date=date($request->birth_date);
+            $form->user()->associate($request->userId);
+            $form->job()->associate($request->jobId);
+            $form->save();
+            return ApiResponse::success($form,200,'form create successfully');
+
+        }
+
+
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //

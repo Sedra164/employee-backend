@@ -1,23 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Helpers\ApiResponse;
-use App\Http\Resources\SectionCompanyResource;
-use App\Http\Resources\SectionResource;
-use App\Models\sectionCompany;
-use App\Models\Section;
-use App\Models\Company;
-use Illuminate\Http\Request;
 
-class sectionCompanyController extends Controller
+use App\Helpers\ApiResponse;
+use App\Models\Skill;
+use Illuminate\Http\Request;
+use Spatie\FlareClient\Api;
+
+class SkillController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $sectionCompany=sectionCompany::all();
-        return response()->json(['success'=>true,'data'=>$sectionCompany],200);
+
     }
 
     /**
@@ -33,11 +30,12 @@ class sectionCompanyController extends Controller
      */
     public function store(Request $request)
     {
-        $sectionCompany=new sectionCompany();
-        $sectionCompany->company()->associate($request->companyId);
-        $sectionCompany->section()->associate($request->sectionId);
-        $sectionCompany->save();
-        return ApiResponse::success($sectionCompany,200);
+        $skill=new Skill();
+        $skill->otherSkills=$request->otherSkills;
+        $skill->language=$request->language;
+        $skill->year=$request->year;
+        $skill->save();
+        return ApiResponse::success($skill,200,'skills created');
     }
 
     /**
@@ -45,10 +43,7 @@ class sectionCompanyController extends Controller
      */
     public function show(string $id)
     {
-        $sectionCompany = sectionCompany::query()->where('id', $id)->with(['company','section'])->get();
-        if ($sectionCompany->isEmpty())
-            return ApiResponse::error(404, 'Not Found');
-        return ApiResponse::success(SectionCompanyResource::make($sectionCompany->first()), 200);
+        //
     }
 
     /**
