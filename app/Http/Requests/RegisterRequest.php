@@ -49,7 +49,7 @@ class RegisterRequest extends FormRequest
             'address.required'=>'The address field is required.',
             'idNumber.required'=>'The idNumber field is required.',
             'idNumber.min'=>'The idNumber must be at least :min characters',
-            'referralId.exists' => 'The referral ID does not exist.',
+
         ];
     }
 }

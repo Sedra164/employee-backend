@@ -13,6 +13,8 @@ class skillJobController extends Controller
      */
     public function index()
     {
+        $skilljob=skillJob::all();
+        return ApiResponse::success($skilljob,200);
 
     }
 

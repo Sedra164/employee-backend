@@ -78,7 +78,7 @@ class CompanyController extends Controller
     public function update(Request $request, string $id)
     {
 
-        $company=Company::FindorFail($id);
+        $company=Company::FindOrFail($id);
         $company->update([
             $company->email=$request->email,
             $company->website=$request->website,

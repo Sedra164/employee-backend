@@ -8,6 +8,7 @@ use App\Http\Controllers\sectionCompanyController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\skillJobController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
     Route::get('/sectionCompanies/{id}', [sectionCompanyController::class,'show']);
     Route::post('/skills/store', [SkillController::class,'store']);
+    Route::get('/skillJobs', [skillJobController::class,'index']);
     Route::post('/skillJobs/store', [skillJobController::class,'store']);
 
 });
@@ -63,6 +65,9 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/companies', [CompanyController::class,'index']);
     Route::get('/jobs', [JobController::class,'index']);
     Route::post('/forms', [FormController::class,'store']);
+    Route::get('/users/{id}', [UserController::class,'show']);
+    Route::post('/users/{id}', [UserController::class,'update']);
+    Route::delete('/users/{user}', [UserController::class,'destroy']);
 
 });
 
