@@ -46,7 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::delete('/jobs/{job}', [JobController::class,'destroy']);
     Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
     Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
-    Route::get('/sectionCompanies/{id}', [sectionCompanyController::class,'show']);
+    Route::get('/sectionCompanies/{jobId}', [sectionCompanyController::class,'show']);
     Route::post('/skills/store', [SkillController::class,'store']);
     Route::get('/skillJobs', [skillJobController::class,'index']);
     Route::post('/skillJobs/store', [skillJobController::class,'store']);

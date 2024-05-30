@@ -26,11 +26,11 @@ class AuthController extends Controller
     {
         try {
 
-            $req->validate(['userName' => 'required|alpha_dash|min:4|exists:users,user_name',
+            $req->validate(['user_name' => 'required|alpha_dash|min:4|exists:users,user_name',
                 'password' => 'required|min:6'
             ]);
 
-            $token = Auth::attempt(['user_name' => $req->userName, 'password' => $req->password]);
+            $token = Auth::attempt(['user_name' => $req->user_name, 'password' => $req->password]);
             if ($token) {
                 $user = Auth::user();
                 $user->token=$token;
@@ -50,10 +50,10 @@ class AuthController extends Controller
     public function loginAdmin(Request $req)
     {
         try {
-            $req->validate(['userName' => 'required|alpha_dash|min:4|exists:users,user_name',
+            $req->validate(['user_name' => 'required|alpha_dash|min:4|exists:users,user_name',
                 'password' => 'required|min:6'
             ]);
-            $token = Auth::attempt(['user_name' => $req->userName, 'password' => $req->password]);
+            $token = Auth::attempt(['user_name' => $req->user_name, 'password' => $req->password]);
 
             if ($token) {
                 $user = Auth::user();
@@ -90,8 +90,8 @@ class AuthController extends Controller
     {
         try {
             $req->validate([
-                'fullName' => 'required|min:3',
-                'userName' => 'required|min:4|alpha_dash|unique:users,user_name',
+                'full_name' => 'required|min:3',
+                'user_name' => 'required|min:4|alpha_dash|unique:users,user_name',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
                 'phone' => 'required|min:10',
@@ -100,9 +100,9 @@ class AuthController extends Controller
             ]);
 
             $user = new User();
-            $user->user_name = $req->userName;
-            $user->first_name = explode(' ', $req->fullName)[0];
-            $user->last_name = explode(' ', $req->fullName)[1];
+            $user->user_name = $req->user_name;
+            $user->first_name = explode(' ', $req->full_name)[0];
+            $user->last_name = explode(' ', $req->full_name)[1];
             $user->password = Hash::make($req->password);
             $user->email = $req->email;
             $user->phone = $req->phone;

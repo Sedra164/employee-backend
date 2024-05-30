@@ -6,6 +6,7 @@ use App\Helpers\ApiResponse;
 use App\Http\Resources\JobResource;
 use App\Models\Job;
 use App\Models\sectionCompany;
+use App\Models\skillJob;
 use Illuminate\Http\Request;
 
 
@@ -69,12 +70,13 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($jobId)
     {
-        $job = Job::query()->where('id', $id)->with(['media','SectionCompany'])->get();
-        if ($job->isEmpty())
-            return ApiResponse::error(404, 'Not Found');
-        return ApiResponse::success(JobResource::make($job->first()), 200);
+     $job=Job::with('skillJob.Skill','media')->find($jobId);
+     if (!$job){
+         return ApiResponse::error(404,'Not Found');
+     }
+     return ApiResponse::success($job,200);
 
     }
 
