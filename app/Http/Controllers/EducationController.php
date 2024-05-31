@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ApiResponse;
 use App\Models\Education;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //
+        $education=Education::query()->with(['media'])->get();
+        return ApiResponse::success($education,200);
     }
 
     /**
@@ -29,7 +31,15 @@ class EducationController extends Controller
     public function store(Request $request)
     {
         $education=new Education();
-        $education
+        $education->educationDegree=$request->educationDegree;
+        $education->specialization=$request->specialization;
+        $education->year=$request->year;
+        $education->form()->associate($request->formId);
+        $education->save();
+        $imageC = new ImageController();
+        $image = $imageC->uploadImage($request->image);
+        $education->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('educations');
+        return ApiResponse::success($education,200,'Eduaction create successfully');
 
     }
 

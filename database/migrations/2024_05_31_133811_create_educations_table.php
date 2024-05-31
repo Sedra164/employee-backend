@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('educationDegree');
             $table->string('specialization');
-            $table->date('year');
+            $table->string('year');
             $table->unsignedBigInteger('form_id');
             $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->timestamps();

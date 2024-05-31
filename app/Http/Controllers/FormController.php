@@ -87,7 +87,17 @@ class FormController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if(Auth::user()){
+            $form=Form::findOrFail($id);
+            $form->update([
+                'martial_social'=>$request->martial_social,
+                'phone'=>$request->phone,
+                'address'=>$request->address,
+            ]);
+            return ApiResponse::success($form,200,'Data has been modified');
+        }else{
+            return ApiResponse::error(401,'Data cann\'t be modified');
+        }
     }
 
     /**

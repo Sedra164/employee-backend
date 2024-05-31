@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\sectionCompanyController;
@@ -65,6 +66,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/companies', [CompanyController::class,'index']);
     Route::get('/jobs', [JobController::class,'index']);
     Route::post('/forms', [FormController::class,'store']);
+    Route::post('/forms/{id}', [FormController::class,'update']);
+    Route::post('/educations', [EducationController::class,'store']);
     Route::get('/users/{id}', [UserController::class,'show']);
     Route::post('/users/{id}', [UserController::class,'update']);
     Route::delete('/users/{user}', [UserController::class,'destroy']);

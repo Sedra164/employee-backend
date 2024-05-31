@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Form extends Model
 {
     use HasFactory;
+    protected $fillable=['first_name','last_name','father_name','mother_name','age','gender',
+        'martial_social','address','phone','birth_date'];
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
