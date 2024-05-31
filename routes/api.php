@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\eduactionJobController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\JobController;
@@ -49,8 +50,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
     Route::get('/sectionCompanies/{jobId}', [sectionCompanyController::class,'show']);
     Route::post('/skills/store', [SkillController::class,'store']);
+    Route::delete('/skills/{skill}', [SkillController::class,'destroy']);
     Route::get('/skillJobs', [skillJobController::class,'index']);
     Route::post('/skillJobs/store', [skillJobController::class,'store']);
+    Route::post('/educations/store', [EducationController::class,'store']);
+    Route::delete('/educations/{education}', [EducationController::class,'destroy']);
+    Route::post('/educationJobs/store', [eduactionJobController::class,'store']);
+
 
 });
 
@@ -65,9 +71,16 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/sections', [SectionController::class,'index']);
     Route::get('/companies', [CompanyController::class,'index']);
     Route::get('/jobs', [JobController::class,'index']);
-    Route::post('/forms', [FormController::class,'store']);
+    Route::post('/forms/store', [FormController::class,'store']);
     Route::post('/forms/{id}', [FormController::class,'update']);
-    Route::post('/educations', [EducationController::class,'store']);
+    Route::delete('/forms/{form}', [FormController::class,'destroy']);
+    Route::post('/educations/store', [EducationController::class,'store']);
+    Route::delete('/educations/{education}', [EducationController::class,'destroy']);
+    Route::post('/educationJobs/store', [eduactionJobController::class,'store']);
+    Route::post('/skills/store', [SkillController::class,'store']);
+    Route::delete('/skills/{skill}', [skillJobController::class,'destroy']);
+    Route::get('/skillJobs', [skillJobController::class,'index']);
+    Route::post('/skillJobs/store', [skillJobController::class,'store']);
     Route::get('/users/{id}', [UserController::class,'show']);
     Route::post('/users/{id}', [UserController::class,'update']);
     Route::delete('/users/{user}', [UserController::class,'destroy']);

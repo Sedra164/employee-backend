@@ -31,7 +31,7 @@ class EducationController extends Controller
     public function store(Request $request)
     {
         $education=new Education();
-        $education->educationDegree=$request->educationDegree;
+        $education->scientific_degree=$request->scientific_degree;
         $education->specialization=$request->specialization;
         $education->year=$request->year;
         $education->form()->associate($request->formId);
@@ -70,8 +70,10 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Education $education)
     {
-        //
+        $education->delete();
+        return ApiResponse::success(null,200,'Education Deleted');
+
     }
 }

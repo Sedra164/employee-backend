@@ -72,7 +72,7 @@ class JobController extends Controller
      */
     public function show($jobId)
     {
-     $job=Job::with('skillJob.Skill','media')->find($jobId);
+     $job=Job::with('skillJob.Skill','media','educationJob.Education')->find($jobId);
      if (!$job){
          return ApiResponse::error(404,'Not Found');
      }

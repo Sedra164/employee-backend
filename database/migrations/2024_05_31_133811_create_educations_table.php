@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->string('educationDegree');
+            $table->string('scientific_degree');
             $table->string('specialization');
             $table->string('year');
             $table->unsignedBigInteger('form_id');

@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Education extends Model
-{
-    use HasFactory;
+class Education extends Model implements HasMedia
+{  use HasFactory , InteractsWithMedia;
+
+    protected $fillable=['scientific_degree','specialization','year'];
+    protected $table='educations';
+
 
     public function form(): BelongsTo
     {

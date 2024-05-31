@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ApiResponse;
-use App\Models\Skill;
+use App\Models\educationJob;
 use Illuminate\Http\Request;
-use Spatie\FlareClient\Api;
 
-class SkillController extends Controller
+class eduactionJobController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +14,8 @@ class SkillController extends Controller
     public function index()
     {
 
+        $educationJob=educationJob::all();
+        return ApiResponse::success($educationJob,200);
     }
 
     /**
@@ -30,12 +31,11 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        $skill=new Skill();
-        $skill->otherSkills=$request->otherSkills;
-        $skill->language=$request->language;
-        $skill->year=$request->year;
-        $skill->save();
-        return ApiResponse::success($skill,200,'skills created');
+        $educationJob=new educationJob();
+        $educationJob->education()->associate($request->educationId);
+        $educationJob->job()->associate($request->jobId);
+        $educationJob->save();
+        return ApiResponse::success($educationJob,200);
     }
 
     /**
@@ -65,10 +65,8 @@ class SkillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Skill $skill)
+    public function destroy(string $id)
     {
-        $skill->delete();
-        return ApiResponse::success(null,200,'Skill Deleted');
-
+        //
     }
 }

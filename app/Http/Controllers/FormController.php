@@ -103,8 +103,9 @@ class FormController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Form $form)
     {
-        //
+        $form->delete();
+        return ApiResponse::success(null,200,'Form Deleted');
     }
 }
