@@ -17,10 +17,6 @@ class JobResource extends JsonResource
        return [
            'id'=>$this->id,
            'title'=>$this->title,
-           'jobDescription'=>$this->jobDescription,
-           'count'=>$this->count,
-           'Age'=>$this->Age,
-           'gender'=>$this->gender,
            'salary'=>$this->salary,
            'media' => MediaResource::make($this, 'jobs'),
        ];
