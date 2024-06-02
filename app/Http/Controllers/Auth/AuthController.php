@@ -90,7 +90,8 @@ class AuthController extends Controller
     {
         try {
             $req->validate([
-                'full_name' => 'required|min:3',
+                'first_name' => 'required|min:3',
+                'last_name' => 'required|min:3',
                 'user_name' => 'required|min:4|alpha_dash|unique:users,user_name',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
@@ -101,8 +102,8 @@ class AuthController extends Controller
 
             $user = new User();
             $user->user_name = $req->user_name;
-            $user->first_name = explode(' ', $req->full_name)[0];
-            $user->last_name = explode(' ', $req->full_name)[1];
+            $user->first_name = $req->first_name;
+            $user->last_name = $req->last_name;
             $user->password = Hash::make($req->password);
             $user->email = $req->email;
             $user->phone = $req->phone;
