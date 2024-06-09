@@ -35,5 +35,16 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $admin->save();
 
+        $sectionAdmin=new User();
+        $sectionAdmin->user_name='sectionAdmin';
+        $sectionAdmin->email='section_admin@gmail.com';
+        $sectionAdmin->password='246810121416';
+        $sectionAdmin->first_name='section';
+        $sectionAdmin->last_name='admin';
+        $sectionAdmin->phone='+963984356242';
+        $sectionAdmin->idNumber='002435353635362772';
+        $sectionAdmin->assignRole('section_admin');
+        $sectionAdmin->save();
+
     }
 }

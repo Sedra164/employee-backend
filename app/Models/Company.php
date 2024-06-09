@@ -20,7 +20,7 @@ class Company extends Model implements HasMedia
     }
     public function sections(): HasMany
     {
-        return $this->hasMany(section::class,'section_company');
+        return $this->hasMany(section::class,'section_company_id');
     }
     public function sectionCompany():HasMany
     {

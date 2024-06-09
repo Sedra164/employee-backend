@@ -8,7 +8,8 @@ use App\Models\Job;
 use App\Models\sectionCompany;
 use App\Models\skillJob;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Spatie\FlareClient\Api;
 
 
 class JobController extends Controller
@@ -52,19 +53,26 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        $job=new Job();
-        $job->title=$request->title;
-        $job->jobDescription=$request->jobDescription;
-        $job->count=$request->count;
-        $job->Age=$request->Age;
-        $job->gender=$request->gender;
-        $job->salary=$request->salary;
-        $job->sectionCompany()->associate($request->sectionCompanyId);
-        $job->save();
-        $imageC = new ImageController();
-        $image = $imageC->uploadImage($request->image);
-        $job->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('jobs');
-        return response()->json(['success'=>true,'data'=>$job],201);
+        $user=Auth::user();
+        $sectionCompany=sectionCompany::where('section_manager_id',$user->id)->first();
+        if($sectionCompany){
+            $job=new Job();
+            $job->title=$request->title;
+            $job->jobDescription=$request->jobDescription;
+            $job->count=$request->count;
+            $job->Age=$request->Age;
+            $job->gender=$request->gender;
+            $job->salary=$request->salary;
+            $job->sectionCompany()->associate($request->sectionCompanyId);
+            $job->save();
+            $imageC = new ImageController();
+            $image = $imageC->uploadImage($request->image);
+            $job->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('jobs');
+             return ApiResponse::success($job,200,'job created successfully');
+          }
+            else{
+               return ApiResponse::error(403,'It is not allowed to add jobs');
+                }
     }
 
     /**

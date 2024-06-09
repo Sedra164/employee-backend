@@ -70,6 +70,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+    public function hasRole($role)
+    {
+        return $this->role=$role;
+    }
 
     public function form()
     {
@@ -79,6 +83,10 @@ class User extends Authenticatable implements JWTSubject
     public function company()
     {
         return $this->hasOne(Company::class, 'manager_id');
+    }
+    public function sectionCompany()
+    {
+     return $this->hasOne(sectionCompany::class,'section_manager_id');
     }
 
 

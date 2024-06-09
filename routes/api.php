@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::delete('/sections/{section}', [SectionController::class,'destroy']);
      Route::get('/companies', [CompanyController::class,'index']);
     Route::post('/companies/store', [CompanyController::class,'store']);
+    Route::post('/companies/update/{id}', [CompanyController::class,'update']);
     Route::get('/companies/{id}', [CompanyController::class,'show']);
     Route::delete('/companies/{company}', [CompanyController::class,'destroy']);
     Route::get('/jobs', [JobController::class,'index']);

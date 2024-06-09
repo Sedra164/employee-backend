@@ -8,6 +8,7 @@ use App\Models\sectionCompany;
 use App\Models\Section;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class sectionCompanyController extends Controller
 {
@@ -33,11 +34,16 @@ class sectionCompanyController extends Controller
      */
     public function store(Request $request)
     {
-        $sectionCompany=new sectionCompany();
-        $sectionCompany->company()->associate($request->companyId);
-        $sectionCompany->section()->associate($request->sectionId);
-        $sectionCompany->save();
-        return ApiResponse::success($sectionCompany,200);
+        if (Auth::user()->hasRole('admin')) {
+            $sectionCompany = new sectionCompany();
+            $sectionCompany->company()->associate($request->companyId);
+            $sectionCompany->section()->associate($request->sectionId);
+            $sectionCompany->sectionManager()->associate($request->sectionManagerId);
+            $sectionCompany->save();
+            return ApiResponse::success($sectionCompany, 200);
+        }else{
+            return ApiResponse::error(403, 'Unauthorized');
+        }
     }
 
     /**

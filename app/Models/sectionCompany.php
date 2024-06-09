@@ -25,4 +25,8 @@ class sectionCompany extends Model
     {
         return $this->belongsTo(Company::class);
     }
+    public function sectionManager():BelongsTo
+    {
+        return $this->belongsTo(User::class,'section_manager_id');
+    }
 }

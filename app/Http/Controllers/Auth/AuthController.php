@@ -58,7 +58,7 @@ class AuthController extends Controller
             if ($token) {
                 $user = Auth::user();
                 $user->token = $token;
-                if ($user->hasRole('super_admin')||$user->hasRole('admin')) {
+                if ($user->hasRole('super_admin')||$user->hasRole('admin')||$user->hasRole('section_admin')) {
 
                     return response()->json(UserResource::make($user), 200);
                 } else {
