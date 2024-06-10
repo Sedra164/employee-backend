@@ -43,6 +43,8 @@ class CompanyController extends Controller
             $company->email = '';
             $company->website = '';
             $company->address = '';
+            $company->phone='';
+            $company->mobile='';
             $company->manager()->associate($request->managerId);
             $company->save();
             return ApiResponse::success($company,200,'Company Created');
@@ -84,6 +86,8 @@ class CompanyController extends Controller
             $company->email=$request->email;
             $company->website=$request->website;
             $company->address=$request->address;
+            $company->phone=$request->phone;
+            $company->mobile=$request->mobile;
             $imageC = new ImageController();
             $image = $imageC->uploadImage($request->image);
             $company->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('companies');

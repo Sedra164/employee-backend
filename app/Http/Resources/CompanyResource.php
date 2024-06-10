@@ -19,8 +19,10 @@ class CompanyResource extends JsonResource
           'name'=>$this->name,
           'type'=>$this->type,
           'email'=>$this->email,
-          'websit'=>$this->website,
+          'website'=>$this->website,
           'address'=>$this->address,
+          'phone'=>$this->phone,
+          'mobile'=>$this->mobile,
           'media' => MediaResource::make($this, 'companies'),
 
       ];

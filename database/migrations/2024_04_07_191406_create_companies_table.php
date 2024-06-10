@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('address');
             $table->string('website');
+            $table->string('phone');
+            $table->string('mobile');
             $table->timestamp('email_verified_at')->nullable();
             $table->unsignedBigInteger('manager_id');
             $table->foreign('manager_id')->references('id')->on('users')->onDelete('cascade');
