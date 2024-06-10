@@ -109,7 +109,7 @@ class AuthController extends Controller
             $user->phone = $req->phone;
             $user->idNumber = $req->idNumber;
             $user->save();
-            $token = Auth::attempt(['user_name' => $user->user_name, 'password' => $req->password]);
+            $token = Auth::attempt(['user_name' => $req->user_name, 'password' => $req->password]);
             if (!$token) {
                 return response()->json(['message' => 'User Not Authenticated'], 401);
             } else {

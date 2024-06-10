@@ -63,14 +63,11 @@ class UserController extends Controller
     {
         if(Auth::user()){
             $user=User::findOrFail($id);
-            $user->update([
-                'user_name'=>$request->user_name,
-                'email'=>$request->email,
-                'phone'=>$request->phone,
-                'password'=>$request->password,
-
-            ]);
-
+            $user->user_name=$request->user_name;
+            $user->email=$request->email;
+            $user->phone=$request->phone;
+            $user->password=$request->password;
+            $user->save();
             return ApiResponse::success($user,200,'Data has been modified');
         }else{
             return ApiResponse::error(401,'Data cann\'t be modified');
