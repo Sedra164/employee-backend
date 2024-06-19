@@ -17,7 +17,7 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Company::query()->with(['media'])->get();
-        return ApiResponse::success(200,CompanyResource::make($company));
+        return ApiResponse::success(CompanyResource::make($company),200);
 
     }
 

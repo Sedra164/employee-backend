@@ -13,7 +13,6 @@ use App\Http\Controllers\skillJobController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -58,6 +57,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::delete('/educations/{education}', [EducationController::class,'destroy']);
     Route::post('/educationJobs/store', [eduactionJobController::class,'store']);
 
+    Route::post('/train', [JobController::class, 'train']);
 
 });
 
@@ -82,9 +82,13 @@ Route::group(['prefix' => 'user'], function () {
     Route::delete('/skills/{skill}', [skillJobController::class,'destroy']);
     Route::get('/skillJobs', [skillJobController::class,'index']);
     Route::post('/skillJobs/store', [skillJobController::class,'store']);
-    Route::get('/users/{id}', [UserController::class,'show']);
+    Route::get('/users', [UserController::class,'getProfile']);
     Route::post('/users/{id}', [UserController::class,'update']);
     Route::delete('/users/{user}', [UserController::class,'destroy']);
+
+    Route::post('/recommend', [JobController::class, 'recommend']);
+
+
 
 });
 

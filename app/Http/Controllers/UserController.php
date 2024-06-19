@@ -42,10 +42,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $user = User::query()->where('id', $id)->get();
-        if ($user->isEmpty())
-            return ApiResponse::error(404, 'Not Found');
-        return ApiResponse::success(UserResource::make($user->first()), 200);
+
     }
 
     /**
@@ -84,5 +81,13 @@ class UserController extends Controller
     {
         $user->delete();
         return ApiResponse::success(null,200,'userDeleted');
+    }
+    public function getProfile(Request  $request){
+        if (Auth::user()){
+            $user=Auth::user();
+            return ApiResponse::success(UserResource::make($user),200);
+        }else{
+            return ApiResponse::error(404,'User is not logged in');
+        }
     }
 }

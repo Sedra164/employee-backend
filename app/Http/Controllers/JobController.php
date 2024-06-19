@@ -6,17 +6,43 @@ use App\Helpers\ApiResponse;
 use App\Http\Resources\JobResource;
 use App\Models\Job;
 use App\Models\sectionCompany;
-use App\Models\skillJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Spatie\FlareClient\Api;
+use App\Services\JobRecommendationService;
 
 
 class JobController extends Controller
+
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+
+    protected $jobService;
+
+    public function __construct(JobRecommendationService $jobService)
+    {
+        $this->jobService = $jobService;
+    }
+
+    public function train(Request $request)
+    {
+        $filePath = $request->file('dataset')->getPathname();
+        $this->jobService->trainModel($filePath);
+
+        return response()->json(['message' => 'Model trained successfully']);
+    }
+
+    public function recommend(Request $request)
+    {
+        $sample = $request->input('sample');
+        $prediction = $this->jobService->predict($sample);
+
+        return response()->json(['recommended_job' => $prediction]);
+    }
+
+
+
+
+
     public function index(Request $request)
     {
        $sectionId=$request->get('section_id');
@@ -112,4 +138,5 @@ class JobController extends Controller
         $job->delete();
         return response()->json(['success'=>true,'data'=>$job],200);
     }
+
 }
