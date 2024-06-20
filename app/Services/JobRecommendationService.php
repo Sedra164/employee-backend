@@ -45,10 +45,16 @@ class JobRecommendationService
 
         $dataset = new Labeled($samples, $labels);
         $this->knn->train($dataset);
+      // $z=[1,7,19,1,7,5,1,0,0,0,0,0,2,0,2,0,0,0,0,0,7,2,0,10,2,0,0,0,5,0,0,4,25];
+
+      //  $y=[1,7,26,1,7,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,15,0,0,0,1,25];
 
 
-        $dataset = new Unlabeled([[1,1,4,1,7,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,2,25]]);
-        return $this->knn->predict($dataset);
+        $x=[1,1,4,1,7,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,2,25];
+        $samples=[$x];
+        $dataset = new labeled($samples,[1]);
+        $result=$this->knn->predict($dataset);
+        return $result;
         // Save trained model
         //$this->persister->save()
         //$this->persister->save($this->knn);

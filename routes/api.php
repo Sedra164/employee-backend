@@ -83,7 +83,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/skillJobs', [skillJobController::class,'index']);
     Route::post('/skillJobs/store', [skillJobController::class,'store']);
     Route::get('/users', [UserController::class,'getProfile']);
-    Route::post('/users/{id}', [UserController::class,'update']);
+    Route::post('/users/update', [UserController::class,'updateProfile']);
     Route::delete('/users/{user}', [UserController::class,'destroy']);
 
     Route::post('/recommend', [JobController::class, 'recommend']);

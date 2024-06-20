@@ -58,19 +58,6 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        if(Auth::user()){
-            $user=User::findOrFail($id);
-            $user->user_name=$request->user_name;
-            $user->email=$request->email;
-            $user->phone=$request->phone;
-            $user->password=$request->password;
-            $user->save();
-            return ApiResponse::success($user,200,'Data has been modified');
-        }else{
-            return ApiResponse::error(401,'Data cann\'t be modified');
-        }
-
-
 
     }
 
@@ -82,6 +69,7 @@ class UserController extends Controller
         $user->delete();
         return ApiResponse::success(null,200,'userDeleted');
     }
+
     public function getProfile(Request  $request){
         if (Auth::user()){
             $user=Auth::user();
@@ -89,5 +77,19 @@ class UserController extends Controller
         }else{
             return ApiResponse::error(404,'User is not logged in');
         }
+    }
+
+    public function updateProfile(Request $request){
+        if(Auth::user()){
+            $user=Auth::user();
+            $user->user_name=$request->user_name;
+            $user->email=$request->email;
+            $user->phone=$request->phone;
+            $user->password=$request->password;
+            $user->save();
+            return ApiResponse::success($user,200,'Data has been modified');
+        }else{
+            return ApiResponse::error(401,'Data cann\'t be modified');
+    }
     }
 }
