@@ -9,6 +9,7 @@ use App\Models\sectionCompany;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Services\JobRecommendationService;
+use Illuminate\Support\Facades\Http;
 
 
 class JobController extends Controller
@@ -31,6 +32,16 @@ class JobController extends Controller
 
         return response()->json(['message' => 'Model trained successfully','Result'=>$x]);
     }
+    public function getJobs(Request $request){
+        $xValue=$request->input('x');
+        $jobs=Job::where('title',$xValue)->get();
+        if($jobs->isEmpty()){
+           return ApiResponse::error(404,'There are no job opportunities belongs to this category');
+        }else {
+            return ApiResponse::success($jobs, 200);
+        }
+    }
+
 
     public function recommend(Request $request)
     {

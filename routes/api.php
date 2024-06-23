@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/jobs/store', [JobController::class,'store']);
     Route::get('/jobs/{id}', [JobController::class,'show']);
     Route::delete('/jobs/{job}', [JobController::class,'destroy']);
+    Route::get('/getJobs',[JobController::class,'getJobs']);
     Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
     Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
     Route::get('/sectionCompanies/{jobId}', [sectionCompanyController::class,'show']);
