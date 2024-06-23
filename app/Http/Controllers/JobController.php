@@ -25,8 +25,9 @@ class JobController extends Controller
 
     public function train(Request $request)
     {
-        $filePath = $request->file('dataset')->getPathname();
-        $x=$this->jobService->trainModel($filePath);
+       // $filePath = $request->file('dataset')->getPathname();
+        $ds=$request->input('sample');
+        $x=$this->jobService->trainModel($ds);
 
         return response()->json(['message' => 'Model trained successfully','Result'=>$x]);
     }
