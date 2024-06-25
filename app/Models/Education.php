@@ -12,7 +12,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Education extends Model implements HasMedia
 {  use HasFactory , InteractsWithMedia;
 
-    protected $fillable=['scientific_degree','specialization','year'];
+    protected $fillable=['certificate','certificate_name','specialization_name'];
     protected $table='educations';
 
 

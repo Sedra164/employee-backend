@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->string('scientific_degree');
-            $table->string('specialization');
-            $table->string('year');
+            $table->string('certificate');
+            $table->string('certificate_name');
+            $table->string('specialization_name');
             $table->unsignedBigInteger('form_id');
             $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->timestamps();

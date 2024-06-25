@@ -78,6 +78,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::delete('/forms/{form}', [FormController::class,'destroy']);
     Route::post('/educations/store', [EducationController::class,'store']);
     Route::delete('/educations/{education}', [EducationController::class,'destroy']);
+    Route::get('/educations/showSpecialization',[EducationController::class,'showSpecialization']);
     Route::post('/educationJobs/store', [eduactionJobController::class,'store']);
     Route::post('/skills/store', [SkillController::class,'store']);
     Route::delete('/skills/{skill}', [skillJobController::class,'destroy']);

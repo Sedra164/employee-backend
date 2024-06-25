@@ -31,9 +31,9 @@ class EducationController extends Controller
     public function store(Request $request)
     {
         $education=new Education();
-        $education->scientific_degree=$request->scientific_degree;
-        $education->specialization=$request->specialization;
-        $education->year=$request->year;
+        $education->certificate=$request->certificate;
+        $education->certificate_name=$request->certificate_name;
+        $education->specialization_name=$request->specialization_name;
         $education->form()->associate($request->formId);
         $education->save();
         $imageC = new ImageController();
@@ -75,5 +75,14 @@ class EducationController extends Controller
         $education->delete();
         return ApiResponse::success(null,200,'Education Deleted');
 
+    }
+    public function showSpecialization(Request $request){
+        $certificateName=$request->input('certificate_name');
+        $education=Education::where('certificate_name',$certificateName)->get(['specialization_name']);
+        if ($education->isEmpty()){
+            return ApiResponse::error(404,'There are no specializations for this certificate');
+        }else {
+            return ApiResponse::success($education, 200);
+        }
     }
 }
