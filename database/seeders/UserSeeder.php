@@ -24,26 +24,45 @@ class UserSeeder extends Seeder
         $superAdmin->assignRole('super_admin');
         $superAdmin->save();
 
+
         $admin=new User();
-        $admin->user_name='admin';
-        $admin->email='admin@gmail.com';
-        $admin->password='223344556677';
-        $admin->first_name='admin';
-        $admin->last_name='Admin';
-        $admin->phone='+963948355342';
-        $admin->idNumber='0023363654424242';
+        $admin->user_name='Rami ';
+        $admin->email='RamiBabilly@gmail.com';
+        $admin->password='4567101112';
+        $admin->first_name='Rami';
+        $admin->last_name='babilly';
+        $admin->phone='+963943567852';
+        $admin->idNumber='004522001542';
         $admin->assignRole('admin');
         $admin->save();
 
 
+
+
+
+
+
+
+
         $sectionAdmin=new User();
-        $sectionAdmin->user_name='sectionAdmin';
-        $sectionAdmin->email='section_admin@gmail.com';
-        $sectionAdmin->password='246810121416';
-        $sectionAdmin->first_name='section';
-        $sectionAdmin->last_name='admin';
-        $sectionAdmin->phone='+963984356242';
-        $sectionAdmin->idNumber='002435353635362772';
+        $sectionAdmin->user_name='Riyad';
+        $sectionAdmin->email='Riyad.sheck_debs@gmail.com';
+        $sectionAdmin->password='5410115422';
+        $sectionAdmin->first_name='Riyad';
+        $sectionAdmin->last_name='sheck_debs';
+        $sectionAdmin->phone='+963981124890';
+        $sectionAdmin->idNumber='002457800441';
+        $sectionAdmin->assignRole('section_admin');
+        $sectionAdmin->save();
+
+        $sectionAdmin=new User();
+        $sectionAdmin->user_name='khaled';
+        $sectionAdmin->email='khaledKaisar@gmail.com';
+        $sectionAdmin->password='444721774';
+        $sectionAdmin->first_name='khaled';
+        $sectionAdmin->last_name='kaisar';
+        $sectionAdmin->phone='+963957433210';
+        $sectionAdmin->idNumber='002677245660';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
