@@ -21,5 +21,13 @@ class SectionSeeder extends Seeder
         $section->name='educational';
         $section->save();
 
+        $section=new Section();
+        $section->name='technique';
+        $section->save();
+
+        $section=new Section();
+        $section->name='marketing';
+        $section->save();
+
     }
 }
