@@ -14,8 +14,9 @@ class SkillSeeder extends Seeder
     public function run(): void
     {
         $skill=new Skill();
-        $skill-> language;
-        $skill-> otherSkills;
-        $skill-> year;
+        $skill-> language='';
+        $skill-> otherSkills='';
+        $skill-> year='';
+        $skill->save();
     }
 }
