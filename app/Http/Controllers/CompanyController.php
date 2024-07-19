@@ -126,7 +126,7 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        if(Auth::id()==$company->manager_id){
+        if(Auth::user()->hasRole('superAdmin')){
         $company->delete();
         return ApiResponse::success(null,200,'CompanyDeleted');
         }else{
