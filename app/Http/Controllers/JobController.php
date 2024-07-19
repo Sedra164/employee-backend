@@ -149,7 +149,6 @@ class JobController extends Controller
             $job->Age = $request->Age;
             $job->gender = $request->gender;
             $job->salary = $request->salary;
-            $job->sectionCompany()->associate($request->sectionCompanyId);
             $job->save();
             return ApiResponse::success($job,200);
         }else{

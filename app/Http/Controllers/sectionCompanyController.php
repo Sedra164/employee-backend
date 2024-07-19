@@ -69,9 +69,16 @@ class sectionCompanyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id,company $company)
     {
-        //
+        $sectionCompany=sectionCompany::findOrFail($id);
+        if(Auth::id()==$company->manager_id){
+            $sectionCompany->sectionManager()->associate($request->sectionManagerId);
+            $sectionCompany->save();
+            return ApiResponse::success($sectionCompany,200,'sectionAdmin updated');
+        }else{
+            return ApiResponse::error(403,'Modification is not allowed');
+        }
     }
 
     /**
