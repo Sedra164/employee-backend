@@ -32,9 +32,10 @@ class sectionCompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,string $id)
     {
-        if (Auth::user()->hasRole('admin')) {
+        $company=Company::findOrFail($id);
+        if(Auth::id()==$company->manager_id) {
             $sectionCompany = new sectionCompany();
             $sectionCompany->company()->associate($request->companyId);
             $sectionCompany->section()->associate($request->sectionId);
@@ -76,8 +77,13 @@ class sectionCompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( sectionCompany $sectionCompany,Company $company)
     {
-        //
+        if(Auth::id()==$company->manager_id){
+            $sectionCompany->delete();
+            return ApiResponse::success(null,200,'CompanyDeleted');
+        }else{
+            return ApiResponse::error(401,'There are no permissions to delete');
+        }
     }
 }

@@ -40,7 +40,8 @@ Route::group(['prefix' => 'admin'], function () {
      Route::get('/companies', [CompanyController::class,'index']);
     Route::post('/companies/store', [CompanyController::class,'store']);
     Route::post('/companies/update/{id}', [CompanyController::class,'update']);
-    Route::get('/companies/{id}', [CompanyController::class,'show']);
+    Route::get('/companies/show', [CompanyController::class,'show']);
+    Route::PUT('/companies/{companyId}',[CompanyController::class,'updateConfirm']);
     Route::delete('/companies/{company}', [CompanyController::class,'destroy']);
     Route::get('/jobs', [JobController::class,'index']);
     Route::post('/jobs/store', [JobController::class,'store']);
@@ -48,8 +49,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::delete('/jobs/{job}', [JobController::class,'destroy']);
     Route::get('/getJobs',[JobController::class,'getJobs']);
     Route::get('/sectionCompanies', [sectionCompanyController::class,'index']);
-    Route::post('/sectionCompanies/store', [sectionCompanyController::class,'store']);
+    Route::post('/sectionCompanies/store/{id}', [sectionCompanyController::class,'store']);
     Route::get('/sectionCompanies/{jobId}', [sectionCompanyController::class,'show']);
+    Route::delete('/sectionCompanies/{sectionCompany}/{company}', [JobController::class,'destroy']);
     Route::post('/skills/store', [SkillController::class,'store']);
     Route::delete('/skills/{skill}', [SkillController::class,'destroy']);
     Route::get('/skillJobs', [skillJobController::class,'index']);

@@ -22,6 +22,7 @@ class CompanySeeder extends Seeder
         $company->phone='don\'t have phone';
         $company->mobile='+963944567698';
         $company->manager_id='2';
+        $company->confirm='1';
         $company->save();
 
         $company=new Company();
@@ -33,6 +34,7 @@ class CompanySeeder extends Seeder
         $company->phone='don\'t have phone';
         $company->mobile='+963994053207';
         $company->manager_id='3';
+        $company->confirm='1';
         $company->save();
 
         $company=new Company();
@@ -44,6 +46,7 @@ class CompanySeeder extends Seeder
         $company->phone='don\'t have phone';
         $company->mobile='+963993327101';
         $company->manager_id='4';
+        $company->confirm='1';
         $company->save();
 
         $company=new Company();
@@ -55,6 +58,7 @@ class CompanySeeder extends Seeder
         $company->phone='212288399';
         $company->mobile='+963993327100';
         $company->manager_id='5';
+        $company->confirm='1';
         $company->save();
 
         $company=new Company();
@@ -66,6 +70,7 @@ class CompanySeeder extends Seeder
         $company->phone='don\'t have phone';
         $company->mobile='+963934599215';
         $company->manager_id='6';
+        $company->confirm='0';
         $company->save();
 
         $company=new Company();
@@ -77,6 +82,7 @@ class CompanySeeder extends Seeder
         $company->phone='don\'t have phone';
         $company->mobile='+963933005306';
         $company->manager_id='7';
+        $company->confirm='0';
         $company->save();
 
     }

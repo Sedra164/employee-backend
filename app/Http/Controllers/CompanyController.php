@@ -6,8 +6,11 @@ namespace App\Http\Controllers;
 use App\Helpers\ApiResponse;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use League\Glide\Api\Api;
+use function Laravel\Prompts\confirm;
 
 class CompanyController extends Controller
 {
@@ -16,8 +19,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = Company::query()->with(['media'])->get();
-        return ApiResponse::success(CompanyResource::make($company),200);
+        $company = Company::where('confirm',1)->with(['media'])->get();
+        return ApiResponse::success($company,200);
 
     }
 
@@ -34,18 +37,20 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-
-        if (Auth::user()->hasRole('superAdmin')) {
-
+        if (Auth::user()->hasRole('admin'))
+        {
             $company = new Company();
             $company->name = $request->name;
-            $company->type = '';
-            $company->email = '';
-            $company->website = '';
-            $company->address = '';
-            $company->phone='';
-            $company->mobile='';
+            $company->type = $request->type;
+            $company->email = $request->email;
+            $company->website = $request->website;
+            $company->address = $request->address;
+            $company->phone=$request->phone;
+            $company->mobile=$request->mobile;
             $company->manager()->associate($request->managerId);
+            $imageC = new ImageController();
+            $image = $imageC->uploadImage($request->image);
+            $company->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('companies');
             $company->save();
             return ApiResponse::success($company,200,'Company Created');
         } else {
@@ -58,12 +63,26 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        $company = Company::query()->where('id', $id)->with(['media'])->get();
-        if ($company->isEmpty())
-            return ApiResponse::error(404, 'Not Found');
-        return ApiResponse::success(CompanyResource::make($company->first()), 200);
+        $user=Auth::user();
+        if($user->hasRole('superAdmin')) {
+            $companies = Company::where('confirm', 0)->get();
+            foreach ($companies as $company) {
+                $companyName = $company->name;
+                $managerFirstName = $company->manager->first_name;
+                $managerLastName = $company->manager->last_name;
+                $data=['company'=>$companyName,
+                       'manager'=>$managerFirstName." ".$managerLastName];
+               return ApiResponse::success($data,200);
+            }
+
+        }else{
+            return ApiResponse::error(401,'there are no permission');
+
+        }
+
+
     }
 
     /**
@@ -107,9 +126,34 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-
+        if(Auth::id()==$company->manager_id){
         $company->delete();
         return ApiResponse::success(null,200,'CompanyDeleted');
+        }else{
+            return ApiResponse::error(401,'There are no permissions to delete');
+        }
+
 
     }
+    public function updateConfirm($companyId){
+        $user=Auth::user();
+        $company=Company::findOrFail($companyId);
+        if($user->hasRole('superAdmin') ) {
+            if ( $company->confirm != 1){
+                $company->confirm = 1;
+                $company->save();
+                return ApiResponse::success($company, 200, 'The Company has been accepted');
+            }else{
+                return ApiResponse::error(401,'The Company was rejected');
+        }
+
+         }else{
+            return ApiResponse::error(401,'there are no permission');
+        }
+    }
+
+
+
+
+
 }

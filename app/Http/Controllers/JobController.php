@@ -147,8 +147,14 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
+        $user=Auth::user();
+        $sectionCompany=sectionCompany::where('section_manager_id',$user->id)->first();
+        if($sectionCompany){
         $job->delete();
         return response()->json(['success'=>true,'data'=>$job],200);
+        }else{
+            return ApiResponse::error(403,'It is not allowed to delete jobs');
+        }
     }
 
 }

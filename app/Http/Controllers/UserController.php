@@ -14,6 +14,7 @@ class UserController extends Controller
      */
 
 
+
     public function index()
     {
 
@@ -92,4 +93,7 @@ class UserController extends Controller
             return ApiResponse::error(401,'Data cann\'t be modified');
     }
     }
+
+
+
 }

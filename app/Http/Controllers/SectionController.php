@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Helpers\ApiResponse;
 use App\Http\Resources\SectionCompanyResource;
 use App\Http\Resources\SectionResource;
+use App\Models\Company;
 use App\Models\Section;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SectionController extends Controller
 {
@@ -32,14 +34,20 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        $section = new Section();
-        $section->name = $request->name;
-        $section->save();
-        $imageC = new ImageController();
-        $image = $imageC->uploadImage($request->image);
-        $section->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('sections');
+        if (Auth::user()->hasRole('admin'))
+        {
+            $section = new Section();
+            $section->name = $request->name;
+            $section->save();
+            $imageC = new ImageController();
+            $image = $imageC->uploadImage($request->image);
+            $section->addMedia(storage_path('app\\public\\') . $image)->preservingOriginal()->toMediaCollection('sections');
 
-        return response()->json(['success' => true, 'message' => 'section created', 'data' => $section], 201);
+            return response()->json(['success' => true, 'message' => 'section created', 'data' => $section], 201);
+        }else{
+            return ApiResponse::error(403, 'Unauthorized');
+        }
+
 
     }
 
@@ -77,7 +85,6 @@ class SectionController extends Controller
      */
     public function destroy(Section $section)
     {
-
         $section->delete();
        return ApiResponse::success(null,200,'SectionDeleted');
     }

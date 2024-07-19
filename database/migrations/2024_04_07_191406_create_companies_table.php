@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('website');
             $table->string('phone');
             $table->string('mobile');
+            $table->integer('confirm')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->unsignedBigInteger('manager_id');
             $table->foreign('manager_id')->references('id')->on('users')->onDelete('cascade');
