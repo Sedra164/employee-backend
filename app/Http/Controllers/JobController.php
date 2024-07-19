@@ -139,9 +139,23 @@ class JobController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $job=Job::findOrFail($id);
+        $user = Auth::user();
+        $sectionCompany = sectionCompany::where('section_manager_id', $user->id)->first();
+        if ($sectionCompany) {
+            $job->title = $request->title;
+            $job->jobDescription = $request->jobDescription;
+            $job->count = $request->count;
+            $job->Age = $request->Age;
+            $job->gender = $request->gender;
+            $job->salary = $request->salary;
+            $job->sectionCompany()->associate($request->sectionCompanyId);
+            $job->save();
+            return ApiResponse::success($job,200);
+        }else{
+            return ApiResponse::error(403,'Modification is not allowed');
+        }
     }
-
     /**
      * Remove the specified resource from storage.
      */
