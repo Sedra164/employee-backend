@@ -82,7 +82,7 @@ class CompanySeeder extends Seeder
         $company->phone='don\'t have phone';
         $company->mobile='+963933005306';
         $company->manager_id='7';
-        $company->confirm='0';
+        $company->confirm='1';
         $company->save();
 
     }

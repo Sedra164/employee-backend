@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/companies/store', [CompanyController::class,'store']);
     Route::post('/companies/update/{id}', [CompanyController::class,'update']);
     Route::get('/companies/show', [CompanyController::class,'show']);
+    Route::get('/companies/{managerId}',[CompanyController::class,'checkManagerId']);
     Route::PUT('/companies/{companyId}',[CompanyController::class,'updateConfirm']);
     Route::delete('/companies/{company}', [CompanyController::class,'destroy']);
     Route::get('/jobs', [JobController::class,'index']);

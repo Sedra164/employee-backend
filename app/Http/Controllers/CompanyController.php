@@ -150,6 +150,18 @@ class CompanyController extends Controller
          }else{
             return ApiResponse::error(401,'there are no permission');
         }
+
+    }
+    public function checkManagerId($managerId){
+        $user=User::find($managerId);
+        if($user && $user->company){
+            $company=$user->company()->first();
+            return ApiResponse::success(CompanyResource::make($company),200);
+        }else{
+            return ApiResponse::error(401,'null');
+        }
+
+
     }
 
 
