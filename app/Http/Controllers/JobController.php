@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Services\JobRecommendationService;
 use Illuminate\Support\Facades\Http;
+use League\Glide\Api\Api;
 
 
 class JobController extends Controller
@@ -166,7 +167,7 @@ class JobController extends Controller
         $sectionCompany=sectionCompany::where('section_manager_id',$user->id)->first();
         if($sectionCompany){
         $job->delete();
-        return response()->json(['success'=>true,'data'=>$job],200);
+        return ApiResponse::success(null,200);
         }else{
             return ApiResponse::error(403,'It is not allowed to delete jobs');
         }
