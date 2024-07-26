@@ -38,6 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/sections/{id}', [SectionController::class,'show']);
     Route::delete('/sections/{section}', [SectionController::class,'destroy']);
      Route::get('/companies', [CompanyController::class,'index']);
+     Route::get('/companies/allCompanies', [CompanyController::class,'getAllCompany                                            ']);
     Route::post('/companies/store', [CompanyController::class,'store']);
     Route::post('/companies/update/{id}', [CompanyController::class,'update']);
     Route::get('/companies/show', [CompanyController::class,'show']);

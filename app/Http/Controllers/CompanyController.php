@@ -163,7 +163,12 @@ class CompanyController extends Controller
 
 
     }
+    public function getAllCompany()
+    {
+        $company = Company::query()->with(['media'])->get();
+        return ApiResponse::success($company,200);
 
+    }
 
 
 
