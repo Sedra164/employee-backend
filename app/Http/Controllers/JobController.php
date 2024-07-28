@@ -67,7 +67,7 @@ class JobController extends Controller
              if(is_null($sectionCompany)) {
                return ApiResponse::error(404, 'there are no jobs associated with this section');
              }else{
-                $job=Job::query()->with(['media'])->where('section_company_id',$sectionCompany->pluck('id'))->get();
+                $job=Job::query()->with(['media'])->whereIn('section_company_id',$sectionCompany->pluck('id'))->get();
                  return ApiResponse::success(JobResource::collection($job),200,'There is all works that belong to this section');
 
            }
