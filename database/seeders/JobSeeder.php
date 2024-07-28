@@ -22,6 +22,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='4';
         $job->save();
+        // $job->addMedia('1716373259_432696928.png')->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Database Administrator';
@@ -32,6 +33,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='5';
         $job->save();
+        // $job->addMedia('1717269635_896946866.png')->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Application developer android';
@@ -42,6 +44,7 @@ class JobSeeder extends Seeder
         $job->salary='2700000';
         $job->section_company_id='8';
         $job->save();
+        // $job->addMedia('1717267627_166756252.png')->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Ui/Ux design';
@@ -52,6 +55,7 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='11';
         $job->save();
+        // $job->addMedia('1716494102_600135052.png')->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Backend Django developer';
@@ -62,6 +66,7 @@ class JobSeeder extends Seeder
         $job->salary='3500000';
         $job->section_company_id='14';
         $job->save();
+        // $job->addMedia('1717269348_607146267.png')->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Database Administrator';
@@ -72,6 +77,7 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='8';
         $job->save();
+        // $job->addMedia('1716494191_610353203.png')->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Database Administrator';
@@ -82,6 +88,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='11';
         $job->save();
+        // $job->addMedia('1716494102_600135052.png')->toMediaCollection('jobs');
 
 
         $job=new job();
@@ -93,5 +100,6 @@ class JobSeeder extends Seeder
         $job->salary='2400000';
         $job->section_company_id='4';
         $job->save();
+        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
     }
 }
