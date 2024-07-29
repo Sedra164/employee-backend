@@ -10,6 +10,7 @@ class UserSeeder extends Seeder
 {
     /** RoleSeeder
      * Run the database seeds.
+     * Run the database seeds.
      */
     public function run(): void
     {
@@ -266,7 +267,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $admin->save();
 
-        
+
         $admin=new User();
         $admin->user_name='FadiAbodan';
         $admin->email='FadiAbodan@gmail.com';
@@ -278,7 +279,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $admin->save();
 
-        
+
         $admin=new User();
         $admin->user_name='AhmadAlshiekh';
         $admin->email='AhmadAlshiekh@gmail.com';
@@ -290,7 +291,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $admin->save();
 
-        
+
         $admin=new User();
         $admin->user_name='mahmoudsbahi';
         $admin->email='mahmoudsbahi@gmail.com';
@@ -302,7 +303,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $admin->save();
 
-        
+
         $admin=new User();
         $admin->user_name='JawadTurki';
         $admin->email='JawadTurki@gmail.com';
@@ -314,7 +315,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $admin->save();
 
-        
+
         $admin=new User();
         $admin->user_name='mohammedALshaib';
         $admin->email='mohammedALshaib@gmail.com';
@@ -602,7 +603,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->idNumber='00269990004321';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
-       
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='OssamaAlkadban';
@@ -614,7 +615,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->idNumber='0026800934279721';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
-       
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MohammedSHehne';
@@ -626,7 +627,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->idNumber='002690777331975';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
-       
+
 
 
         $sectionAdmin=new User();
@@ -756,7 +757,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='LubnaWahbe';
@@ -769,7 +770,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='RamaDadikhi';
@@ -782,7 +783,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='AmmarWahbe';
@@ -795,7 +796,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='AbdALhamidTouma';
@@ -808,7 +809,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='AbbasFalaha';
@@ -816,12 +817,12 @@ class UserSeeder extends Seeder
         $sectionAdmin->password='567777';
         $sectionAdmin->first_name='abbas';
         $sectionAdmin->last_name='falaha';
-        $sectionAdmin->phone='+963945909077';
+        $sectionAdmin->phone='+963945909078';
         $sectionAdmin->idNumber='0166568783665';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='BayanAbbas';
@@ -834,7 +835,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='EyadArjeh';
@@ -847,7 +848,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='BayanSmmaqeh';
@@ -860,7 +861,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MarjianaGhreeb';
@@ -873,7 +874,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='OmarMakanssi';
@@ -886,7 +887,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='ReemKayali';
@@ -899,7 +900,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MohammadKadi';
@@ -912,7 +913,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MohammedKadour';
@@ -925,7 +926,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='RamiHajKhalil';
@@ -938,7 +939,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MohammedHabbal';
@@ -951,7 +952,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='ZahirAbbas';
@@ -964,7 +965,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='SaliKhouri';
@@ -977,7 +978,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='NatalliKhouri';
@@ -990,7 +991,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='mohammedQatrji';
@@ -1003,7 +1004,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='LaithAgoubari';
@@ -1016,7 +1017,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='DiaaNajar';
@@ -1029,7 +1030,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='AmiraRamadan';
@@ -1043,7 +1044,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->save();
 
 
-            
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='RamiSawas';
@@ -1056,7 +1057,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                    
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MohammedKalaji';
@@ -1069,7 +1070,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                    
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='JamilJawad';
@@ -1082,7 +1083,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-                    
+
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='MohammadIsmail';
@@ -1107,6 +1108,6 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+
     }
 }

@@ -22,7 +22,8 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='4';
         $job->save();
-        // $job->addMedia('1716373259_432696928.png')->toMediaCollection('jobs');
+        //TODO
+//         $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Database Administrator';
@@ -100,6 +101,6 @@ class JobSeeder extends Seeder
         $job->salary='2400000';
         $job->section_company_id='4';
         $job->save();
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
+//        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
     }
 }
