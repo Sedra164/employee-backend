@@ -816,7 +816,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->password='567777';
         $sectionAdmin->first_name='abbas';
         $sectionAdmin->last_name='falaha';
-        $sectionAdmin->phone='+963945909077';
+        $sectionAdmin->phone='+963945933307';
         $sectionAdmin->idNumber='0166568783665';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
@@ -1063,7 +1063,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->email='MohammedKalaji@gmail.com';
         $sectionAdmin->password='788888';
         $sectionAdmin->first_name='mohammed';
-        $sectionAdmin->last_name='';
+        $sectionAdmin->last_name='kalaji';
         $sectionAdmin->phone='+963943730091';
         $sectionAdmin->idNumber='087632432113673';
         $sectionAdmin->assignRole('section_admin');
@@ -1107,6 +1107,6 @@ class UserSeeder extends Seeder
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
-        
+    
     }
 }

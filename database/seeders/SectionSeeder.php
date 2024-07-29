@@ -14,19 +14,27 @@ class SectionSeeder extends Seeder
     public function run(): void
     {
         $section=new Section();
-        $section->name='administrative';
+        $section->name='Administrative';
         $section->save();
 
         $section=new Section();
-        $section->name='educational';
+        $section->name='Educational';
         $section->save();
 
         $section=new Section();
-        $section->name='technique';
+        $section->name='Technique';
         $section->save();
 
         $section=new Section();
-        $section->name='marketing';
+        $section->name='Marketing';
+        $section->save();
+
+        $section=new Section();
+        $section->name='Engineering';
+        $section->save();
+
+        $section=new Section();
+        $section->name='medical';
         $section->save();
 
     }
