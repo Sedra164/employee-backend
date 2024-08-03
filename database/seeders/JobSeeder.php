@@ -34,11 +34,8 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='5';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1717269635_896946866.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
         $job=new job();
         $job->title='Application developer android';
@@ -49,11 +46,8 @@ class JobSeeder extends Seeder
         $job->salary='2700000';
         $job->section_company_id='8';
         $job->save();
-<<<<<<< HEAD
 //        $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1717267627_166756252.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
         $job=new job();
         $job->title='Ui/Ux design';
@@ -64,11 +58,7 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='11';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716494102_600135052.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='Backend Django developer';
@@ -79,11 +69,8 @@ class JobSeeder extends Seeder
         $job->salary='3500000';
         $job->section_company_id='14';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1717269348_607146267.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='Database Administrator';
@@ -94,11 +81,8 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='8';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716494191_610353203.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='Database Administrator';
@@ -109,11 +93,8 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='11';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716494102_600135052.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -125,11 +106,8 @@ class JobSeeder extends Seeder
         $job->salary='2400000';
         $job->section_company_id='4';
         $job->save();
-<<<<<<< HEAD
+
         //$job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
 
@@ -143,15 +121,7 @@ class JobSeeder extends Seeder
         $job->salary='2800000';
         $job->section_company_id='36';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -163,16 +133,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='36';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Application developer ios';
@@ -183,15 +144,7 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='4';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -203,15 +156,7 @@ class JobSeeder extends Seeder
         $job->salary='2600000';
         $job->section_company_id='4';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -223,17 +168,8 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='8';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -245,17 +181,7 @@ class JobSeeder extends Seeder
         $job->salary='2900000';
         $job->section_company_id='11';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -267,16 +193,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='39';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Back end Asp.net developer';
@@ -287,15 +204,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='14';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -307,15 +216,7 @@ class JobSeeder extends Seeder
         $job->salary='3500000';
         $job->section_company_id='39';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -327,16 +228,7 @@ class JobSeeder extends Seeder
         $job->salary='2700000';
         $job->section_company_id='8';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Back end node js developer';
@@ -347,16 +239,7 @@ class JobSeeder extends Seeder
         $job->salary='3300000';
         $job->section_company_id='39';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Back end node js developer';
@@ -367,15 +250,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='14';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -387,15 +262,7 @@ class JobSeeder extends Seeder
         $job->salary='2400000';
         $job->section_company_id='42';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -407,16 +274,7 @@ class JobSeeder extends Seeder
         $job->salary='4000000';
         $job->section_company_id='48';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Front end developer ';
@@ -427,16 +285,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='11';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Network security specialist ';
@@ -447,16 +296,7 @@ class JobSeeder extends Seeder
         $job->salary='4500000';
         $job->section_company_id='45';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Network security specialist ';
@@ -467,16 +307,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='8';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='IT administrator ';
@@ -487,16 +318,7 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='45';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='IT administrator ';
@@ -507,13 +329,8 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='53';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -525,14 +342,8 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='48';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Ui/Ux design ';
@@ -543,14 +354,7 @@ class JobSeeder extends Seeder
         $job->salary='2400000';
         $job->section_company_id='42';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Application developer android';
@@ -561,14 +365,7 @@ class JobSeeder extends Seeder
         $job->salary='2800000';
         $job->section_company_id='42';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Gynecologist ';
@@ -579,13 +376,9 @@ class JobSeeder extends Seeder
         $job->salary='5000000';
         $job->section_company_id='22';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -597,15 +390,7 @@ class JobSeeder extends Seeder
         $job->salary='5000000';
         $job->section_company_id='34';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -617,15 +402,8 @@ class JobSeeder extends Seeder
         $job->salary='4000000';
         $job->section_company_id='24';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -637,16 +415,7 @@ class JobSeeder extends Seeder
         $job->salary='4500000';
         $job->section_company_id='28';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Anesthesiologist';
@@ -657,15 +426,8 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='26';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='Neurologist ';
@@ -676,15 +438,10 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='26';
         $job->save();
-<<<<<<< HEAD
+
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
 
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='Neurologist ';
@@ -695,15 +452,7 @@ class JobSeeder extends Seeder
         $job->salary='4500000';
         $job->section_company_id='34';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='Pediatrician ';
@@ -714,17 +463,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='22';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-        
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='General surgery doctor ';
@@ -735,15 +474,7 @@ class JobSeeder extends Seeder
         $job->salary='5500000';
         $job->section_company_id='32';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='General surgery doctor ';
@@ -754,15 +485,7 @@ class JobSeeder extends Seeder
         $job->salary='6000000';
         $job->section_company_id='30';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
         $job=new job();
         $job->title='General doctor ';
@@ -773,19 +496,8 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='26';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Cardiologist ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -795,17 +507,8 @@ class JobSeeder extends Seeder
         $job->salary='5000000';
         $job->section_company_id='24';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Pharmacist ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -815,17 +518,8 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='22';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Pharmacist ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -835,19 +529,9 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='30';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');  
-
-
-        
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Nurse ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -857,17 +541,9 @@ class JobSeeder extends Seeder
         $job->salary='1200000';
         $job->section_company_id='22';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
 
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-        
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Nurse ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -877,19 +553,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='28';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Nurse ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -899,11 +564,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='30';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
 
 
@@ -916,12 +578,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='52';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Civil engineer';
@@ -932,11 +589,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='59';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -948,11 +601,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='54';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -964,12 +613,7 @@ class JobSeeder extends Seeder
         $job->salary='4000000';
         $job->section_company_id='61';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Architecture engineer ';
@@ -980,12 +624,7 @@ class JobSeeder extends Seeder
         $job->salary='3400000';
         $job->section_company_id='52';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Architecture implementation manager ';
@@ -996,12 +635,7 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='54';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Interior designer ';
@@ -1012,12 +646,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='61';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Interior designer ';
@@ -1028,11 +657,7 @@ class JobSeeder extends Seeder
         $job->salary='2500000';
         $job->section_company_id='57';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1044,11 +669,7 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='59';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1060,11 +681,8 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='2';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
 
         $job=new job();
@@ -1076,11 +694,8 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='2';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
 
         $job=new job();
@@ -1092,11 +707,8 @@ class JobSeeder extends Seeder
         $job->salary='1900000';
         $job->section_company_id='2';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
 
         $job=new job();
@@ -1108,12 +720,7 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='18';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Physic teacher ';
@@ -1124,11 +731,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='18';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1140,12 +743,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='2';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='English teacher ';
@@ -1156,12 +754,7 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='20';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='French teacher ';
@@ -1172,11 +765,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='20';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1188,12 +777,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='2';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Accountant ';
@@ -1204,12 +788,7 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='58';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Accountant ';
@@ -1220,17 +799,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='1';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Accountant ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1240,19 +810,9 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='60';
         $job->save();
-<<<<<<< HEAD
+
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-
-    
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Accountant ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1262,17 +822,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='9';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Accountant ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1282,17 +833,8 @@ class JobSeeder extends Seeder
         $job->salary='1500000';
         $job->section_company_id='21';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Accountant ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1302,17 +844,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='25';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Accountant ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1322,17 +855,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='27';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Accountant ';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1342,17 +866,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='12';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Supervisor';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1362,17 +877,8 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='53';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Supervisor';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1382,17 +888,9 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='46';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
 
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Supervisor';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1402,17 +900,8 @@ class JobSeeder extends Seeder
         $job->salary='900000';
         $job->section_company_id='33';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Supervisor';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1422,17 +911,9 @@ class JobSeeder extends Seeder
         $job->salary='2000000';
         $job->section_company_id='19';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
 
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Supervisor';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1442,17 +923,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='40';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
-
-
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
-
-
-        
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
         $job=new job();
         $job->title='Secretary';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1462,11 +934,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='1';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1478,11 +946,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='23';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1494,11 +958,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='27';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1510,11 +970,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='51';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
 
         $job=new job();
@@ -1526,11 +983,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='56';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1542,11 +995,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='33';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1558,11 +1007,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='17';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
         $job=new job();
@@ -1574,11 +1019,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='17';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
 
@@ -1591,11 +1032,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='58';
         $job->save();
-<<<<<<< HEAD
         // $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
 
@@ -1608,11 +1045,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='53';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
         $job=new job();
         $job->title='Receptionist';
@@ -1623,11 +1057,8 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='23';
         $job->save();
-<<<<<<< HEAD
 //        $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
+
 
 
         $job=new job();
@@ -1639,12 +1070,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='27';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
-
 
         $job=new job();
         $job->title='Receptionist';
@@ -1655,11 +1081,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='29';
         $job->save();
-<<<<<<< HEAD
         //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
-=======
-        // $job->addMedia('1716454208_580845740.png')->toMediaCollection('jobs');
->>>>>>> e953471475031d572b267ef1b450cda78887b15d
 
 
 
