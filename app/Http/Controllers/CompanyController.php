@@ -163,9 +163,13 @@ class CompanyController extends Controller
 
 
     }
-
-
-
-
-
+    public function getAllCompany()
+    {
+      if(Auth::user()->hasRole("superAdmin"))
+        { $company = Company::query()->with(['media'])->get();
+        return ApiResponse::success($company,200);
+        } else 
+            return ApiResponse::error(401,'there are no permission');
+    }
+    
 }

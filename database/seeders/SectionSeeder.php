@@ -14,20 +14,35 @@ class SectionSeeder extends Seeder
     public function run(): void
     {
         $section=new Section();
-        $section->name='administrative';
+        $section->name='Administrative';
         $section->save();
+//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
 
         $section=new Section();
-        $section->name='educational';
+        $section->name='Educational';
         $section->save();
+//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
+
 
         $section=new Section();
-        $section->name='technique';
+        $section->name='Technique';
         $section->save();
+//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
 
         $section=new Section();
-        $section->name='marketing';
+        $section->name='Marketing';
         $section->save();
+//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
+
+        $section=new Section();
+        $section->name='Engineering';
+        $section->save();
+//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
+
+        $section=new Section();
+        $section->name='medical';
+        $section->save();
+//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
 
     }
 }
