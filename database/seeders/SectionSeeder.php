@@ -44,15 +44,6 @@ class SectionSeeder extends Seeder
         $section->save();
 //      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
 
-        $section=new Section();
-        $section->name='Engineering';
-        $section->save();
-//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
-
-        $section=new Section();
-        $section->name='medical';
-        $section->save();
-//      $section->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('sections');
 
     }
 }
