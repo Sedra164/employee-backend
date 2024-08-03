@@ -365,7 +365,7 @@ class JobSeeder extends Seeder
         $job->salary='2800000';
         $job->section_company_id='42';
         $job->save();
-        //  $job->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
+        //  $job->add\Media((storage_path('app/public/99.jpg')))->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Gynecologist ';
