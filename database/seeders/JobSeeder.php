@@ -22,8 +22,7 @@ class JobSeeder extends Seeder
         $job->salary='3000000';
         $job->section_company_id='4';
         $job->save();
-
-         $job->addMedia((storage_path('app/public/amin.jpg')))->preservingOriginal()->toMediaCollection('jobs');
+        $job->addMedia((storage_path('app/public/amin.jpg')))->preservingOriginal()->toMediaCollection('jobs');
 
         $job=new job();
         $job->title='Database Administrator';

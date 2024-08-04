@@ -16,11 +16,11 @@ class CompanySeeder extends Seeder
         $company = new Company();
         $company->name = 'AlKhalema School';
         $company->type = 'educational';
-        $company->email = 'Ramibabilly@gmail.com';
+        $company->email = 'Ramiibabilly1@gmail.com';
         $company->address = 'aleppo-alsyrian';
         $company->website = 'Manzomet_Albabilly@facebook.com';
         $company->phone = 'don\'t have phone';
-        $company->mobile = '+963944567698';
+        $company->mobile = '+963944577698';
         $company->manager_id = '2';
         $company->confirm = '1';
         $company->save();

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('certificate');
             $table->string('certificate_name');
-            $table->string('specialization_name');
-            $table->unsignedBigInteger('form_id');
+            $table->string('specialization_name')->nullable();
+            $table->unsignedBigInteger('form_id')->nullable();
             $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->timestamps();
         });

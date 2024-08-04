@@ -29,11 +29,11 @@ class UserSeeder extends Seeder
         $admin=new User();
         $admin->user_name='Rami ';
         $admin->email='RamiBabilly@gmail.com';
-        $admin->password='4567101112';
+        $admin->password='45671112';
         $admin->first_name='Rami';
         $admin->last_name='babilly';
-        $admin->phone='+963943567852';
-        $admin->idNumber='004522001542';
+        $admin->phone='+963993567852';
+        $admin->idNumber='004802001542';
         $admin->assignRole('admin');
         $admin->save();
 
@@ -826,7 +826,7 @@ class UserSeeder extends Seeder
 
         $sectionAdmin=new User();
         $sectionAdmin->user_name='BayanAbbas';
-        $sectionAdmin->email='BayanAbbas@gmail.com';
+        $sectionAdmin->email='BayanAbbass@gmail.com';
         $sectionAdmin->password='568888';
         $sectionAdmin->first_name='bayan';
         $sectionAdmin->last_name='abbas';
@@ -1066,7 +1066,7 @@ class UserSeeder extends Seeder
         $sectionAdmin->first_name='mohammed';
         $sectionAdmin->last_name='kalaji';
         $sectionAdmin->phone='+963943730091';
-        $sectionAdmin->idNumber='087632432113673';
+        $sectionAdmin->idNumber='087632113673';
         $sectionAdmin->assignRole('section_admin');
         $sectionAdmin->save();
 
