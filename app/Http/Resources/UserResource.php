@@ -22,8 +22,10 @@ class UserResource extends JsonResource
             'phone' => $this->phone,
             'email' => $this->email,
             'idNumber'=>$this->idNumber,
+            'roles'=>$this->roles,
 
         ];
+
 
         if (isset($this->token)) {
             $data['access_token'] = $this->token;

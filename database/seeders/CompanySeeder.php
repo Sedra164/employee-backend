@@ -22,7 +22,7 @@ class CompanySeeder extends Seeder
         $company->phone = 'don\'t have phone';
         $company->mobile = '+963944567698';
         $company->manager_id = '2';
-        $company->confirm = '1';
+        $company->confirm = '0';
         $company->save();
 //      $company->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('companies');
 

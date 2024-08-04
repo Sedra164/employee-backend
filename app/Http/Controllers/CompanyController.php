@@ -139,8 +139,8 @@ class CompanyController extends Controller
         $user=Auth::user();
         $company=Company::findOrFail($companyId);
         if($user->hasRole('superAdmin') ) {
-            if ( $company->confirm != 1){
-                $company->confirm = 1;
+            if ( $company->confirm = 1){
+                $company->confirm = 0;
                 $company->save();
                 return ApiResponse::success($company, 200, 'The Company has been accepted');
             }else{
@@ -168,8 +168,8 @@ class CompanyController extends Controller
       if(Auth::user()->hasRole("superAdmin"))
         { $company = Company::query()->with(['media'])->get();
         return ApiResponse::success($company,200);
-        } else 
+        } else
             return ApiResponse::error(401,'there are no permission');
     }
-    
+
 }
