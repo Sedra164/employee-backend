@@ -19,7 +19,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = Company::where('confirm',1)->with(['media'])->get();
+        $company = Company::where('confirm',0)->with(['media'])->get();
         return ApiResponse::success($company,200);
 
     }
