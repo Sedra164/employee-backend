@@ -19,7 +19,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = Company::where('confirm',0)->with(['media'])->get();
+        $company = Company::where('confirm',1)->with(['media'])->get();
         return ApiResponse::success($company,200);
 
     }
@@ -139,8 +139,8 @@ class CompanyController extends Controller
         $user=Auth::user();
         $company=Company::findOrFail($companyId);
         if($user->hasRole('superAdmin') ) {
-            if ( $company->confirm = 1){
-                $company->confirm = 0;
+            if ( $company->confirm = 0){
+                $company->confirm = 1;
                 $company->save();
                 return ApiResponse::success($company, 200, 'The Company has been accepted');
             }else{
