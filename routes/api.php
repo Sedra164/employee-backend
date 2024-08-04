@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::PUT('/companies/{companyId}',[CompanyController::class,'updateConfirm']);
     Route::delete('/companies/{company}', [CompanyController::class,'destroy']);
     Route::get('/jobs', [JobController::class,'index']);
+    Route::get('/getAllJobs', [JobController::class,'getAllJobs']);
     Route::post('/jobs/store', [JobController::class,'store']);
     Route::get('/jobs/{id}', [JobController::class,'show']);
     Route::delete('/jobs/{job}', [JobController::class,'destroy']);

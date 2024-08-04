@@ -1168,7 +1168,6 @@ class JobSeeder extends Seeder
         $job->save();
          $job->addMedia(storage_path('app/public/c#.jpg'))->preservingOriginal()->toMediaCollection('jobs');
 
-
         $job=new job();
         $job->title='Receptionist';
         $job->jobDescription='hour work 10-6/friday off /comfortable working environment';
@@ -1178,7 +1177,7 @@ class JobSeeder extends Seeder
         $job->salary='1000000';
         $job->section_company_id='29';
         $job->save();
-         $job->addMedia(storage_path('app/public/book.jpg'))->preservingOriginal()->toMediaCollection('jobs');
+        $job->addMedia(storage_path('app/public/book.jpg'))->preservingOriginal()->toMediaCollection('jobs');
 
 
 

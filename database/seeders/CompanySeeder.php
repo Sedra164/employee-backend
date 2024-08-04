@@ -22,7 +22,7 @@ class CompanySeeder extends Seeder
         $company->phone = 'don\'t have phone';
         $company->mobile = '+963944577698';
         $company->manager_id = '2';
-        $company->confirm = '1';
+        $company->confirm = '0';
         $company->save();
 //      $company->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('companies');
 
@@ -350,7 +350,7 @@ class CompanySeeder extends Seeder
         $company->phone = 'don\'t have phone';
         $company->mobile = '+963933060302';
         $company->manager_id = '40';
-        $company->confirm = '1';
+        $company->confirm = '0';
         $company->save();
 //      $company->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('companies');
 
@@ -363,7 +363,7 @@ class CompanySeeder extends Seeder
         $company->phone = 'don\'t have phone';
         $company->mobile = '+963987138773';
         $company->manager_id = '41';
-        $company->confirm = '1';
+        $company->confirm = '0';
         $company->save();
 //      $company->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('companies');
 
@@ -376,7 +376,7 @@ class CompanySeeder extends Seeder
         $company->phone = 'don\'t have phone';
         $company->mobile = '+963933456787';
         $company->manager_id = '42';
-        $company->confirm = '1';
+        $company->confirm = '0';
         $company->save();
 //      $company->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('companies');
 
@@ -389,7 +389,7 @@ class CompanySeeder extends Seeder
         $company->phone = 'don\'t have phone';
         $company->mobile = '+963988877173';
         $company->manager_id = '43';
-        $company->confirm = '1';
+        $company->confirm = '0';
         $company->save();
         //      $company->addMedia((storage_path('app/public/99.jpg')))->toMediaCollection('companies');
 

@@ -170,5 +170,9 @@ class JobController extends Controller
             return ApiResponse::error(403, 'It is not allowed to delete jobs');
         }
     }
+public function getAllJobs(){
+        $jobs=Job::query()->with(['media'])->get();
+        return ApiResponse::success($jobs,200);
+}
 
 }
